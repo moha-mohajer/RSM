@@ -16,10 +16,10 @@ class CreateItemsTable extends Migration
         Schema::create('items', function (Blueprint $table) {
             $table->bigIncrements('id'); //Item id number
             $table->timestamps(); 
-            $table->increments('obid'); //Order or buy ID number
+            $table->integer('obid'); //Order or buy ID number
             $table->decimal('price',9,3); //Item buying price 
             $table->string('sn')->nullable(); //Item serial number
-            $table->bigIncrements('supid')->nullable(); //Suplier ID number
+            $table->integer('supid')->nullable(); //Suplier ID number
             $table->decimal('cpr',9,3); //Retail Price
             $table->timestamps('cc')->nullable(); //Customer Confermation timestamps 
             $table->timestamps('cancled')->nullable(); //Customer cancelation timestamps
@@ -27,7 +27,7 @@ class CreateItemsTable extends Migration
             $table->timestamps('arrived')->nullable(); //Item Arivall timestamps
             $table->timestamps('sold')->nullable(); //Item sale timestamps
             $table->timestamps('stored')->nullable(); //Item Stored timestamps
-            $table->bigIncrements('uid'); //Editor UserId
+            $table->integer('uid'); //Editor UserId
             $table->mediumText('note')->nullable(); //Extra note
         });
     }

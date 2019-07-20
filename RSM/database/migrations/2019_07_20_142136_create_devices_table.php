@@ -22,7 +22,6 @@ class CreateDevicesTable extends Migration
             $table->biginteger('uid');
             $table->string('date');
             $table->string('note')->nullable();
-
             $table->timestamps();
         });
     }

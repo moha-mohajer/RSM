@@ -16,10 +16,10 @@ class CreateInvoicesTable extends Migration
         Schema::create('invoices', function (Blueprint $table) {
             $table->bigIncrements('id'); //Invoice Id number
             $table->timestamps(); //Invoice timestamps
-            $table->bigIncrements('cid'); //Customer Id number(owner)
-            $table->bigIncrements('sid'); //Service ID number 
+            $table->integer('cid'); //Customer Id number(owner)
+            $table->integer('sid'); //Service ID number 
             // IID Should review(maybe have more than one order)
-            $table->bigIncrements('iid'); //Item ID number
+            $table->integer('iid'); //Item ID number
             $table->decimal('tax',9,3)->nullable(); //Vat
             $table->decimal('total',9,3); //Total amont
             $table->decimal('dicount',9,3)->nullable(); //Discount

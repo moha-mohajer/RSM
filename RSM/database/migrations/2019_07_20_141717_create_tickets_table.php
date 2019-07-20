@@ -15,15 +15,15 @@ class CreateTicketsTable extends Migration
     {
         Schema::create('tickets', function (Blueprint $table) {
             $table->bigIncrements('id');//ticketid
-            $table->bigInteger('cid')->nullable();//customerid
-            $table->bigInteger('did')->nullable();
+            $table->integer('cid')->nullable();//customerid
+            $table->integer('did')->nullable();
             $table->string('description');
             $table->string('sop')->nullable();
             $table->string('sc')->nullable();
             $table->string('Belonging')->nullable();
             $table->string('si')->nullable();
-            $table->bigInteger('st');
-            $table->bigInteger('uid');
+            $table->integer('st');
+            $table->integer('uid');
             $table->string('notes')->nullable();
             $table->timestamps();
             $table->timestamp('datedone')->nullable();
