@@ -7,10 +7,10 @@
         <link rel="stylesheet" href="{{asset('css/app.css')}}">
     </head>
     <body>
-      {{-- @include('inc.navbar') --}}
+      @include('inc.navbar')
       <div class="container">
         {{-- includ the messagess --}}
-        {{-- @include('inc.messages') --}}
+        @include('inc.messages')
         @yield('content') 
       </div>
       <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
