@@ -25,8 +25,6 @@ class CreateOrdersTable extends Migration
             $table->bigInteger('uid');
             $table->string('notes')->nullable();
             $table->timestamps();
-
-
         });
     }
 

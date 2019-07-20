@@ -23,7 +23,7 @@ class CreateServicesTable extends Migration
             $table->timestamp('sdate');
             $table->timestamp('edate');
             $table->timestamp('fdate')->nullable();
-            $table->integer('JP');
+            $table->integer('jp');
             $table->string('notes')->nullable();
             $table->timestamps();
         });

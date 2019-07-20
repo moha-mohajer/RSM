@@ -25,8 +25,6 @@ class CreateInvoicesTable extends Migration
             $table->decimal('dicount',9,3)->nullable(); //Discount
             $table->decimal('pay',9,3); //Payable price
             $table->mediumText('note')->nullable(); //Extre note
-                    
-
         });
     }
 

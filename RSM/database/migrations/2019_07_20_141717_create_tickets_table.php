@@ -27,10 +27,6 @@ class CreateTicketsTable extends Migration
             $table->string('notes')->nullable();
             $table->timestamps();
             $table->timestamp('datedone')->nullable();
-            
-           
-
-
         });
     }
 
