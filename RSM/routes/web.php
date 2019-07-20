@@ -18,11 +18,12 @@
 Route::get('/', 'PagesController@index');
 Route::get('/about', 'PagesController@about');
 Route::get('/services', 'PagesController@services');
+
 Route::get('/view', 'PagesController@view');
-Route::get('/ticket', 'PagesController@ticket');
-Route::get('/service', 'PagesController@service');
-Route::get('/order', 'PagesController@order');
-Route::get('/device', 'PagesController@device');
-Route::get('/item', 'PagesController@item');
-Route::get('/invoice', 'PagesController@invoice');
-Route::resource('posts','PostsController');
+
+Route::resource('ticket', 'ticketController');
+Route::resource('service', 'serviceController');
+Route::resource('order', 'orderController');
+Route::resource('device', 'deviceController');
+Route::resource('item', 'itemController');
+Route::resource('invoice', 'invoiceController');
