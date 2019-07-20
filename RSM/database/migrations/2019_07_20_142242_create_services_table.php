@@ -20,9 +20,9 @@ class CreateServicesTable extends Migration
             $table->integer('fr');
             $table->integer('fs')->nullable();
             $table->integer('orderID')->nullable();
-            $table->timestamp('sdate');
-            $table->timestamp('edate');
-            $table->timestamp('fdate')->nullable();
+            $table->dateTime('sdate');
+            $table->dateTime('edate');
+            $table->dateTime('fdate')->nullable();
             $table->integer('jp');
             $table->string('notes')->nullable();
             $table->timestamps();

@@ -26,7 +26,7 @@ class CreateTicketsTable extends Migration
             $table->integer('uid');
             $table->string('notes')->nullable();
             $table->timestamps();
-            $table->timestamp('datedone')->nullable();
+            $table->dateTime('datedone')->nullable();
         });
     }
 

@@ -21,12 +21,12 @@ class CreateItemsTable extends Migration
             $table->string('sn')->nullable(); //Item serial number
             $table->integer('supid')->nullable(); //Suplier ID number
             $table->decimal('cpr',9,3); //Retail Price
-            $table->timestamps('cc')->nullable(); //Customer Confermation timestamps 
-            $table->timestamps('cancled')->nullable(); //Customer cancelation timestamps
-            $table->timestamps('orderd')->nullable(); //Item Order timestamps
-            $table->timestamps('arrived')->nullable(); //Item Arivall timestamps
-            $table->timestamps('sold')->nullable(); //Item sale timestamps
-            $table->timestamps('stored')->nullable(); //Item Stored timestamps
+            $table->dateTime('cc')->nullable(); //Customer Confermation timestamps 
+            $table->dateTime('cancled')->nullable(); //Customer cancelation timestamps
+            $table->dateTime('orderd')->nullable(); //Item Order timestamps
+            $table->dateTime('arrived')->nullable(); //Item Arivall timestamps
+            $table->dateTime('sold')->nullable(); //Item sale timestamps
+            $table->dateTime('stored')->nullable(); //Item Stored timestamps
             $table->integer('uid'); //Editor UserId
             $table->mediumText('note')->nullable(); //Extra note
         });
