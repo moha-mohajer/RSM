@@ -13,3 +13,5 @@
 # $ composer require "laravelcollective/html":"^5.6.0"
 # $ composer require unisharp/laravel-ckeditor
 # $ php artisan vendor:publish --tag=ckeditor
+# S php artisan serve
+
