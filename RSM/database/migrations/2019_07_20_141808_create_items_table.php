@@ -23,7 +23,7 @@ class CreateItemsTable extends Migration
             $table->decimal('cpr',9,3); //Retail Price
             $table->dateTime('cc')->nullable(); //Customer Confermation timestamps 
             $table->dateTime('cancled')->nullable(); //Customer cancelation timestamps
-            $table->dateTime('orderd')->nullable(); //Item Order timestamps
+            $table->dateTime('ordered')->nullable(); //Item Order timestamps
             $table->dateTime('arrived')->nullable(); //Item Arivall timestamps
             $table->dateTime('sold')->nullable(); //Item sale timestamps
             $table->dateTime('stored')->nullable(); //Item Stored timestamps

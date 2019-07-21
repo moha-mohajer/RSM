@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+// Use Eloquent
+use App\Invoice;
+// Use SQL qurry by bringing DB Librely
+use  DB;
 
 class invoiceController extends Controller
 {
@@ -13,7 +17,10 @@ class invoiceController extends Controller
      */
     public function index()
     {
-        //
+        $invoices = invoice::orderBy('created_at', 'desc')->paginate(10);
+
+        // Load the view
+        return view ('invoice.index')->with('invoices',$invoices);
     }
 
     /**
@@ -23,7 +30,8 @@ class invoiceController extends Controller
      */
     public function create()
     {
-        //
+        //Load up the view
+        return view('invoice.create');
     }
 
     /**
@@ -34,7 +42,22 @@ class invoiceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        // Create Invoice
+        $Invoice = new Invoice;
+        $Invoice->cid = $request->input('cid');
+        $Invoice->sid = $request->input('sid');
+        $Invoice->iid = $request->input('iid');
+        $Invoice->tax = $request->input('tax');
+        $Invoice->total = $request->input('total');
+        $Invoice->dicount = $request->input('dicount');
+        $Invoice->pay = $request->input('pay');
+        $Invoice->note = $request->input('note');
+        $Invoice->save();
+
+        // redirect with success message
+        return redirect('/invoice')->with('success', 'Invoice Created');
+
     }
 
     /**
@@ -45,7 +68,12 @@ class invoiceController extends Controller
      */
     public function show($id)
     {
-        //
+        //fatche it with database "Eloquent"
+        // return Invoice::find($id);
+
+        // return the view
+        $invoice = Invoice::find($id);
+        return view ('invoice.show')->with('invoice', $invoice);
     }
 
     /**
@@ -56,7 +84,9 @@ class invoiceController extends Controller
      */
     public function edit($id)
     {
-        //
+       // return the view
+       $invoice = Invoice::find($id);
+       return view ('invoice.edit')->with('invoice', $invoice);
     }
 
     /**
@@ -68,7 +98,21 @@ class invoiceController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        // Update Invoice
+        $Invoice = Invoice::find($id);
+        $Invoice->cid = $request->input('cid');
+        $Invoice->sid = $request->input('sid');
+        $Invoice->iid = $request->input('iid');
+        $Invoice->tax = $request->input('tax');
+        $Invoice->total = $request->input('total');
+        $Invoice->dicount = $request->input('dicount');
+        $Invoice->pay = $request->input('pay');
+        $Invoice->note = $request->input('note');
+        $Invoice->save();
+
+        // redirect with success message
+        return redirect('/invoice')->with('success', 'Invoice Updated');
     }
 
     /**
@@ -79,6 +123,11 @@ class invoiceController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // Update delete
+        $Invoice = Invoice::find($id);
+        $Invoice->delete();
+
+        // redirect with success message
+        return redirect('/invoice')->with('success', 'Invoice Deleted');
     }
 }

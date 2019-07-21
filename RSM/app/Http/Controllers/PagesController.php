@@ -25,39 +25,39 @@ class PagesController extends Controller
         return view('pages.services')->with($data);
     }
 
-    public function view(){
-        $title = 'view';
-        return view('pages.view')->with('title', $title);
-    }
+    // public function view(){
+    //     $title = 'view';
+    //     return view('pages.view')->with('title', $title);
+    // }
 
-    public function ticket(){
-        $title = 'ticket';
-        return view('pages.ticket')->with('title', $title);
-    }
+    // public function ticket(){
+    //     $title = 'ticket';
+    //     return view('pages.ticket')->with('title', $title);
+    // }
 
-    public function service(){
-        $title = 'service';
-        return view('pages.service')->with('title', $title);
-    }
+    // public function service(){
+    //     $title = 'service';
+    //     return view('pages.service')->with('title', $title);
+    // }
 
-    public function order(){
-        $title = 'order';
-        return view('pages.order')->with('title', $title);
-    }
+    // public function order(){
+    //     $title = 'order';
+    //     return view('pages.order')->with('title', $title);
+    // }
 
-    public function device(){
-        $title = 'device';
-        return view('pages.device')->with('title', $title);
-    }
+    // public function device(){
+    //     $title = 'device';
+    //     return view('pages.device')->with('title', $title);
+    // }
 
-    public function item(){
-        $title = 'item';
-        return view('pages.item')->with('title', $title);
-    }
+    // public function item(){
+    //     $title = 'item';
+    //     return view('pages.item')->with('title', $title);
+    // }
 
-    public function invoice(){
-        $title = 'invoice';
-        return view('pages.invoice')->with('title', $title);
-    }
+    // public function invoice(){
+    //     $title = 'invoice';
+    //     return view('pages.invoice')->with('title', $title);
+    // }
 
 }
