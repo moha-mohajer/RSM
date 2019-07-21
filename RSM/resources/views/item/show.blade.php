@@ -4,11 +4,8 @@
   <br><p><a href="/item" class="btn btn-defult">Go Back</a></p>
   <h1>create on {{$item->created_at}}</h1>
   <div>
-    {{-- Cusomer ID: {!!$item->obid!!} --}}
-   <a href="/user/{{$item->obid}}">Cusomer ID: {!!$item->obid!!}</a>
-  <div>
     {{-- Item ID: {!!$item->supid!!} --}}
-    <a href="/item/{{$item->supid}}">Item ID: {!!$item->supid!!}</a>
+    Item ID: {!!$item->supid!!}
   </div>
   <div>
     SN: {!!$item->sn!!}</a>
