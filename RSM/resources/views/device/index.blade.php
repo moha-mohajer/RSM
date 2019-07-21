@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+<br>
 @section('content')
   <h1>Devices</h1>
   @if (count($devices) > 0)

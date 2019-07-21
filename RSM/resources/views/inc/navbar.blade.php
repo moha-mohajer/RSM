@@ -11,7 +11,7 @@
             <li><a class="nav-link" href="/services">Services</a></li>
             </ul>
           <ul class = " nav navbar-nav navbar-right">
-             <li><a class="nav-link" href="/ticket/create">Create Ticket</a></li>
+             <li><a class="nav-link" href="/device/create">Create Device</a></li>
           </ul>
 
         </div>

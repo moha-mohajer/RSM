@@ -47,6 +47,10 @@ class deviceController extends Controller
         $Device = new Device;
         $Device->type = $request->input('type');
         $Device->brand = $request->input('brand');
+        $Device->model = $request->input('model');
+        $Device->sn = $request->input('sn');
+        $Device->uid = $request->input('uid');
+        $Device->note = $request->input('note');
         $Device->save();
 
         // redirect with success message
@@ -100,7 +104,6 @@ class deviceController extends Controller
         $Device->model = $request->input('model');
         $Device->sn = $request->input('sn');
         $Device->uid = $request->input('uid');
-        $Device->date = $request->input('date');
         $Device->note = $request->input('note');
         $Device->save();
 
@@ -121,6 +124,6 @@ class deviceController extends Controller
         $Device->delete();
 
         // redirect with success message
-        return redirect('/device')->with('success', 'Device Updated');
+        return redirect('/device')->with('success', 'Device Deleted');
     }
 }
