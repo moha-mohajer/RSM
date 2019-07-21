@@ -23,7 +23,7 @@
       Customer Confrmation On: {!!$item->cc!!}
   </div>
   <div>
-      Customer cancle On: {!!$item->cc!!}
+      Customer cancle On: {!!$item->cancled!!}
   </div>
   <div>
       Ordare on: {!!$item->order!!}

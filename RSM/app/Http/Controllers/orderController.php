@@ -4,11 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 // Use Eloquent
-use App\Item;
+use App\Order;
 // Use SQL qurry by bringing DB Librely
 use  DB;
 
-class itemController extends Controller
+class orderController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,10 +17,10 @@ class itemController extends Controller
      */
     public function index()
     {
-        $items = item::orderBy('created_at', 'desc')->paginate(10);
+        $orders = order::orderBy('created_at', 'desc')->paginate(10);
 
         // Load the view
-        return view ('item.index')->with('items',$items);
+        return view ('order.index')->with('orders',$orders);
     }
 
     /**
@@ -31,7 +31,7 @@ class itemController extends Controller
     public function create()
     {
         //Load up the view
-        return view('item.create');
+        return view('order.create');
     }
 
     /**
@@ -43,25 +43,21 @@ class itemController extends Controller
     public function store(Request $request)
     {
 
-        // Create Item
-        $Item = new Item;
-        $Item->obid = $request->input('obid');
-        $Item->price = $request->input('price');
-        $Item->sn = $request->input('sn');
-        $Item->supid = $request->input('supid');
-        $Item->cpr = $request->input('cpr');
-        $Item->cc = $request->input('cc');
-        $Item->cancled = $request->input('cancled');
-        $Item->ordered = $request->input('ordered');
-        $Item->arrived = $request->input('arrived');
-        $Item->sold = $request->input('sold');
-        $Item->stored = $request->input('stored');
-        $Item->uid = $request->input('uid');
-        $Item->note = $request->input('note');
-        $Item->save();
+        // Create Order
+        $Order = new Order;
+        $Order->cid = $request->input('cid');
+        $Order->did = $request->input('did');
+        $Order->description = $request->input('description');
+        $Order->Color = $request->input('Color');
+        $Order->PN = $request->input('PN');
+        $Order->UnitMeasurment = $request->input('UnitMeasurment');
+        $Order->quantity = $request->input('quantity');
+        $Order->uid = $request->input('uid');
+        $Order->note = $request->input('note');
+        $Order->save();
 
         // redirect with success message
-        return redirect('/item')->with('success', 'Item Created');
+        return redirect('/order')->with('success', 'Order Created');
 
     }
 
@@ -74,11 +70,11 @@ class itemController extends Controller
     public function show($id)
     {
         //fatche it with database "Eloquent"
-        // return Item::find($id);
+        // return Order::find($id);
 
         // return the view
-        $item = Item::find($id);
-        return view ('item.show')->with('item', $item);
+        $order = Order::find($id);
+        return view ('order.show')->with('order', $order);
     }
 
     /**
@@ -90,8 +86,8 @@ class itemController extends Controller
     public function edit($id)
     {
        // return the view
-       $item = Item::find($id);
-       return view ('item.edit')->with('item', $item);
+       $order = Order::find($id);
+       return view ('order.edit')->with('order', $order);
     }
 
     /**
@@ -104,25 +100,21 @@ class itemController extends Controller
     public function update(Request $request, $id)
     {
 
-        // Update Item
-        $Item = Item::find($id);
-        $Item->obid = $request->input('obid');
-        $Item->price = $request->input('price');
-        $Item->sn = $request->input('sn');
-        $Item->supid = $request->input('supid');
-        $Item->cpr = $request->input('cpr');
-        $Item->cc = $request->input('cc');
-        $Item->cancled = $request->input('cancled');
-        $Item->ordered = $request->input('ordered');
-        $Item->arrived = $request->input('arrived');
-        $Item->sold = $request->input('sold');
-        $Item->stored = $request->input('stored');
-        $Item->uid = $request->input('uid');
-        $Item->note = $request->input('note');
-        $Item->save();
+        // Update Order
+        $Order = Order::find($id);
+        $Order->cid = $request->input('cid');
+        $Order->did = $request->input('did');
+        $Order->description = $request->input('description');
+        $Order->Color = $request->input('Color');
+        $Order->PN = $request->input('PN');
+        $Order->UnitMeasurment = $request->input('UnitMeasurment');
+        $Order->quantity = $request->input('quantity');
+        $Order->uid = $request->input('uid');
+        $Order->note = $request->input('note');
+        $Order->save();
 
         // redirect with success message
-        return redirect('/item')->with('success', 'Item Updated');
+        return redirect('/order')->with('success', 'Order Updated');
     }
 
     /**
@@ -134,10 +126,10 @@ class itemController extends Controller
     public function destroy($id)
     {
         // Update delete
-        $Item = Item::find($id);
-        $Item->delete();
+        $Order = Order::find($id);
+        $Order->delete();
 
         // redirect with success message
-        return redirect('/item')->with('success', 'Item Deleted');
+        return redirect('/order')->with('success', 'Order Deleted');
     }
 }
