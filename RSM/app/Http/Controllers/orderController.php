@@ -3,8 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+// Use Eloquent
+use App\Item;
+// Use SQL qurry by bringing DB Librely
+use  DB;
 
-class orderController extends Controller
+class itemController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +17,10 @@ class orderController extends Controller
      */
     public function index()
     {
-        //
+        $items = item::orderBy('created_at', 'desc')->paginate(10);
+
+        // Load the view
+        return view ('item.index')->with('items',$items);
     }
 
     /**
@@ -23,7 +30,8 @@ class orderController extends Controller
      */
     public function create()
     {
-        //
+        //Load up the view
+        return view('item.create');
     }
 
     /**
@@ -34,7 +42,27 @@ class orderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        // Create Item
+        $Item = new Item;
+        $Item->obid = $request->input('obid');
+        $Item->price = $request->input('price');
+        $Item->sn = $request->input('sn');
+        $Item->supid = $request->input('supid');
+        $Item->cpr = $request->input('cpr');
+        $Item->cc = $request->input('cc');
+        $Item->cancled = $request->input('cancled');
+        $Item->ordered = $request->input('ordered');
+        $Item->arrived = $request->input('arrived');
+        $Item->sold = $request->input('sold');
+        $Item->stored = $request->input('stored');
+        $Item->uid = $request->input('uid');
+        $Item->note = $request->input('note');
+        $Item->save();
+
+        // redirect with success message
+        return redirect('/item')->with('success', 'Item Created');
+
     }
 
     /**
@@ -45,7 +73,12 @@ class orderController extends Controller
      */
     public function show($id)
     {
-        //
+        //fatche it with database "Eloquent"
+        // return Item::find($id);
+
+        // return the view
+        $item = Item::find($id);
+        return view ('item.show')->with('item', $item);
     }
 
     /**
@@ -56,7 +89,9 @@ class orderController extends Controller
      */
     public function edit($id)
     {
-        //
+       // return the view
+       $item = Item::find($id);
+       return view ('item.edit')->with('item', $item);
     }
 
     /**
@@ -68,7 +103,26 @@ class orderController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        // Update Item
+        $Item = Item::find($id);
+        $Item->obid = $request->input('obid');
+        $Item->price = $request->input('price');
+        $Item->sn = $request->input('sn');
+        $Item->supid = $request->input('supid');
+        $Item->cpr = $request->input('cpr');
+        $Item->cc = $request->input('cc');
+        $Item->cancled = $request->input('cancled');
+        $Item->ordered = $request->input('ordered');
+        $Item->arrived = $request->input('arrived');
+        $Item->sold = $request->input('sold');
+        $Item->stored = $request->input('stored');
+        $Item->uid = $request->input('uid');
+        $Item->note = $request->input('note');
+        $Item->save();
+
+        // redirect with success message
+        return redirect('/item')->with('success', 'Item Updated');
     }
 
     /**
@@ -79,6 +133,11 @@ class orderController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // Update delete
+        $Item = Item::find($id);
+        $Item->delete();
+
+        // redirect with success message
+        return redirect('/item')->with('success', 'Item Deleted');
     }
 }
