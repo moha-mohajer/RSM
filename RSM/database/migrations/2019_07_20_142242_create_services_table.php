@@ -15,15 +15,15 @@ class CreateServicesTable extends Migration
     {
         Schema::create('services', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('uid');
-            $table->integer('tid');
-            $table->integer('fr');
+            $table->integer('uid')->nullable();
+            $table->integer('tid')->nullable();
+            $table->integer('fr')->nullable();
             $table->integer('fs')->nullable();
             $table->integer('orderID')->nullable();
-            $table->dateTime('sdate');
-            $table->dateTime('edate');
+            $table->dateTime('sdate')->nullable();
+            $table->dateTime('edate')->nullable();
             $table->dateTime('fdate')->nullable();
-            $table->integer('jp');
+            $table->integer('jp')->nullable();
             $table->string('notes')->nullable();
             $table->timestamps();
         });

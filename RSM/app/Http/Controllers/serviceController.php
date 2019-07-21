@@ -3,8 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+// Use Eloquent
+use App\Order;
+// Use SQL qurry by bringing DB Librely
+use  DB;
 
-class serviceController extends Controller
+class orderController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +17,10 @@ class serviceController extends Controller
      */
     public function index()
     {
-        //
+        $orders = order::orderBy('created_at', 'desc')->paginate(10);
+
+        // Load the view
+        return view ('order.index')->with('orders',$orders);
     }
 
     /**
@@ -23,7 +30,8 @@ class serviceController extends Controller
      */
     public function create()
     {
-        //
+        //Load up the view
+        return view('order.create');
     }
 
     /**
@@ -34,7 +42,23 @@ class serviceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        // Create Order
+        $Order = new Order;
+        $Order->cid = $request->input('cid');
+        $Order->did = $request->input('did');
+        $Order->description = $request->input('description');
+        $Order->Color = $request->input('Color');
+        $Order->PN = $request->input('PN');
+        $Order->UnitMeasurment = $request->input('UnitMeasurment');
+        $Order->quantity = $request->input('quantity');
+        $Order->uid = $request->input('uid');
+        $Order->note = $request->input('note');
+        $Order->save();
+
+        // redirect with success message
+        return redirect('/order')->with('success', 'Order Created');
+
     }
 
     /**
@@ -45,7 +69,12 @@ class serviceController extends Controller
      */
     public function show($id)
     {
-        //
+        //fatche it with database "Eloquent"
+        // return Order::find($id);
+
+        // return the view
+        $order = Order::find($id);
+        return view ('order.show')->with('order', $order);
     }
 
     /**
@@ -56,7 +85,9 @@ class serviceController extends Controller
      */
     public function edit($id)
     {
-        //
+       // return the view
+       $order = Order::find($id);
+       return view ('order.edit')->with('order', $order);
     }
 
     /**
@@ -68,7 +99,22 @@ class serviceController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        // Update Order
+        $Order = Order::find($id);
+        $Order->cid = $request->input('cid');
+        $Order->did = $request->input('did');
+        $Order->description = $request->input('description');
+        $Order->Color = $request->input('Color');
+        $Order->PN = $request->input('PN');
+        $Order->UnitMeasurment = $request->input('UnitMeasurment');
+        $Order->quantity = $request->input('quantity');
+        $Order->uid = $request->input('uid');
+        $Order->note = $request->input('note');
+        $Order->save();
+
+        // redirect with success message
+        return redirect('/order')->with('success', 'Order Updated');
     }
 
     /**
@@ -79,6 +125,11 @@ class serviceController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // Update delete
+        $Order = Order::find($id);
+        $Order->delete();
+
+        // redirect with success message
+        return redirect('/order')->with('success', 'Order Deleted');
     }
 }
