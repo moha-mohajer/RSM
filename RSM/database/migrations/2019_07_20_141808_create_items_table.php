@@ -19,7 +19,7 @@ class CreateItemsTable extends Migration
             $table->integer('obid')->nullable(); //Order or buy ID number
             $table->decimal('price',9,2)->nullable(); //Item buying price
             $table->string('sn')->nullable(); //Item serial number
-            $table->integer('supid')->nullable(); //Suplier ID number
+            $table->integer('supid')->nullable(); //Suplier ID number 
             $table->decimal('cpr',9,2)->nullable(); //Retail Price
             $table->dateTime('cc')->nullable(); //Customer Confermation timestamps
             $table->dateTime('cancled')->nullable(); //Customer cancelation timestamps

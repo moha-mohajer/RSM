@@ -1,30 +1,39 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark ">
-        <a class="navbar-brand" href="/">{{config('app.name', 'LSAPP')}}</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      
-        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-          <ul class="navbar-nav mr-auto">
-            <li><a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-            <li><a class="nav-link" href="/about">About</a></li> 
-            <li><a class="nav-link" href="/services">Services</a></li>
-            </ul>
-          <ul class = " nav navbar-nav ">
-             <li><a class="nav-link" href="/ticket/create">Create Ticket</a></li>
-             <li><a class="nav-link" href="/item/create">Create item</a></li>
-             <li><a class="nav-link" href="/order/create">Create Order</a></li>
-             <li><a class="nav-link" href="/device/create">Create Device</a></li>
-             <li><a class="nav-link" href="/invoice/create">Create invoice</a></li>
-             <li><a class="nav-link" href="/service/create">Create service</a></li>
+
+<script src="jquery/jquery.js"></script>
+<script type="text/javascript" src='js/bootstrap.min.js'></script>
+
+<link rel="stylesheet" href="<?php echo asset('css/boostrap.min.css')?>" type="text/css"> 
+<link rel="stylesheet" href="<?php echo asset('css/custom.css')?>" type="text/css"> 
+
+
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark border-bottom border-top">
+    <a href="/" id="navTittle">RSM</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+          <ul class="dropdown">
+            <li><a href="#">Sub-1</a></li>
+            <li><a href="#">Sub-2</a></li>
+            <li><a href="#">Sub-3</a></li>
           </ul>
-          <ul class = " nav navbar-nav">
-              <li><a class="nav-link" href="/ticket">Tickets</a></li>
-              <li><a class="nav-link" href="/item">Items</a></li>
-              <li><a class="nav-link" href="/order">Orders</a></li>
-              <li><a class="nav-link" href="/device">Devices</a></li>
-              <li><a class="nav-link" href="/invoice">Invoices</a></li>
-              <li><a class="nav-link" href="/service">Service</a></li>
-           </ul>
-        </div>
-      </nav>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Services</a>
+          <ul class="dropdown">
+            <li><a href="#">Sub-1</a></li>
+            <li><a href="#">Sub-2</a></li>
+            <li><a href="#">Sub-3</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>

@@ -6,8 +6,9 @@
     @foreach ($items as $item)
         <div class="well">
             <p>
-              <h3><a href="/item/{{$item->id}}">create on {{$item->created_at}}</a></h3>
-              <small>{{$item->id}}</small>
+            
+              <h3><a href="/item/{{$item->id}}">{{$item->id}}</a></h3>
+              <small>create on {{$item->created_at}}</small>
             </p><br>
         </div>
     @endforeach
