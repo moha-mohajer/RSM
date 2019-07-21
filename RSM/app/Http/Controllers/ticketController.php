@@ -4,11 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 // Use Eloquent
-use App\Order;
+use App\Ticket;
 // Use SQL qurry by bringing DB Librely
 use  DB;
 
-class orderController extends Controller
+class ticketController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,10 +17,10 @@ class orderController extends Controller
      */
     public function index()
     {
-        $orders = order::orderBy('created_at', 'desc')->paginate(10);
+        $tickets = ticket::orderBy('created_at', 'desc')->paginate(10);
 
         // Load the view
-        return view ('order.index')->with('orders',$orders);
+        return view ('ticket.index')->with('tickets',$tickets);
     }
 
     /**
@@ -31,7 +31,7 @@ class orderController extends Controller
     public function create()
     {
         //Load up the view
-        return view('order.create');
+        return view('ticket.create');
     }
 
     /**
@@ -43,21 +43,21 @@ class orderController extends Controller
     public function store(Request $request)
     {
 
-        // Create Order
-        $Order = new Order;
-        $Order->cid = $request->input('cid');
-        $Order->did = $request->input('did');
-        $Order->description = $request->input('description');
-        $Order->Color = $request->input('Color');
-        $Order->PN = $request->input('PN');
-        $Order->UnitMeasurment = $request->input('UnitMeasurment');
-        $Order->quantity = $request->input('quantity');
-        $Order->uid = $request->input('uid');
-        $Order->note = $request->input('note');
-        $Order->save();
+        // Create Ticket
+        $Ticket = new Ticket;
+        $Ticket->cid = $request->input('cid');
+        $Ticket->did = $request->input('did');
+        $Ticket->description = $request->input('description');
+        $Ticket->sop = $request->input('sop');
+        $Ticket->sc = $request->input('sc');
+        $Ticket->Belonging = $request->input('Belonging');
+        $Ticket->st = $request->input('st');
+        $Ticket->uid = $request->input('uid');
+        $Ticket->note = $request->input('note');
+        $Ticket->save();
 
         // redirect with success message
-        return redirect('/order')->with('success', 'Order Created');
+        return redirect('/ticket')->with('success', 'Ticket Created');
 
     }
 
@@ -70,11 +70,11 @@ class orderController extends Controller
     public function show($id)
     {
         //fatche it with database "Eloquent"
-        // return Order::find($id);
+        // return Ticket::find($id);
 
         // return the view
-        $order = Order::find($id);
-        return view ('order.show')->with('order', $order);
+        $ticket = Ticket::find($id);
+        return view ('ticket.show')->with('ticket', $ticket);
     }
 
     /**
@@ -86,8 +86,8 @@ class orderController extends Controller
     public function edit($id)
     {
        // return the view
-       $order = Order::find($id);
-       return view ('order.edit')->with('order', $order);
+       $ticket = Ticket::find($id);
+       return view ('ticket.edit')->with('ticket', $ticket);
     }
 
     /**
@@ -100,21 +100,21 @@ class orderController extends Controller
     public function update(Request $request, $id)
     {
 
-        // Update Order
-        $Order = Order::find($id);
-        $Order->cid = $request->input('cid');
-        $Order->did = $request->input('did');
-        $Order->description = $request->input('description');
-        $Order->Color = $request->input('Color');
-        $Order->PN = $request->input('PN');
-        $Order->UnitMeasurment = $request->input('UnitMeasurment');
-        $Order->quantity = $request->input('quantity');
-        $Order->uid = $request->input('uid');
-        $Order->note = $request->input('note');
-        $Order->save();
+        // Update Ticket
+        $Ticket = Ticket::find($id);
+        $Ticket->cid = $request->input('cid');
+        $Ticket->did = $request->input('did');
+        $Ticket->description = $request->input('description');
+        $Ticket->sop = $request->input('sop');
+        $Ticket->sc = $request->input('sc');
+        $Ticket->Belonging = $request->input('Belonging');
+        $Ticket->st = $request->input('st');
+        $Ticket->uid = $request->input('uid');
+        $Ticket->note = $request->input('note');
+        $Ticket->save();
 
         // redirect with success message
-        return redirect('/order')->with('success', 'Order Updated');
+        return redirect('/ticket')->with('success', 'Ticket Updated');
     }
 
     /**
@@ -126,10 +126,10 @@ class orderController extends Controller
     public function destroy($id)
     {
         // Update delete
-        $Order = Order::find($id);
-        $Order->delete();
+        $Ticket = Ticket::find($id);
+        $Ticket->delete();
 
         // redirect with success message
-        return redirect('/order')->with('success', 'Order Deleted');
+        return redirect('/ticket')->with('success', 'Ticket Deleted');
     }
 }

@@ -17,14 +17,13 @@ class CreateTicketsTable extends Migration
             $table->bigIncrements('id');//ticketid
             $table->integer('cid')->nullable();//customerid
             $table->integer('did')->nullable();
-            $table->string('description');
+            $table->string('description')->nullable();
             $table->string('sop')->nullable();
             $table->string('sc')->nullable();
             $table->string('Belonging')->nullable();
-            $table->string('si')->nullable();
-            $table->integer('st');
-            $table->integer('uid');
-            $table->string('notes')->nullable();
+            $table->integer('st')->nullable();
+            $table->integer('uid')->nullable();
+            $table->string('note')->nullable();
             $table->timestamps();
             $table->dateTime('datedone')->nullable();
         });

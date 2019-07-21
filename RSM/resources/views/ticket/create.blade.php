@@ -2,8 +2,8 @@
 
 @section('content')
 <br>
-  <h1>Add a New Order</h1>
-  {{ Form::open(['action' => 'orderController@store', 'method' =>'POST']) }}
+  <h1>Add a New Ticket</h1>
+  {{ Form::open(['action' => 'ticketController@store', 'method' =>'POST']) }}
     <div class="form-group">
       {{form::label('cid','Customer')}}
       {{form::text('cid','',['class'=>'form-control','placeholder'=>'Customer ID'])}}
@@ -17,20 +17,20 @@
         {{form::text('description','',['class'=>'form-control','placeholder'=>'Isuses Description'])}}
     </div>
     <div class="form-group">
-        {{form::label('Color','Color')}}
-        {{form::text('Color','',['class'=>'form-control','placeholder'=>'Color'])}}
+        {{form::label('sop','Security Type')}}
+        {{form::text('sop','',['class'=>'form-control','placeholder'=>'Password, Pincode, Pattern'])}}
     </div>
     <div class="form-group">
-        {{form::label('PN','Part Number')}}
-        {{form::text('PN','',['class'=>'form-control','placeholder'=>'Part Numbe'])}}
+        {{form::label('sc','Security Code')}}
+        {{form::text('sc','',['class'=>'form-control','placeholder'=>'Security Code'])}}
     </div>
     <div class="form-group">
-        {{form::label('UnitMeasurment','Measurment')}}
-        {{form::text('UnitMeasurment','',['class'=>'form-control','placeholder'=>'Unit Measurment'])}}
+        {{form::label('Belonging','Belonging')}}
+        {{form::text('Belonging','',['class'=>'form-control','placeholder'=>'Bag, cover, battary, Ac adaper'])}}
     </div>
     <div class="form-group">
-        {{form::label('quantity','Quantity')}}
-        {{form::text('quantity','',['class'=>'form-control','placeholder'=>'quantity'])}}
+        {{form::label('si','Service Tag')}}
+        {{form::text('si','',['class'=>'form-control','placeholder'=>'Service Tag'])}}
     </div> 
   <div class="form-group">
       {{form::label('uid','User ID')}}

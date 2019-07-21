@@ -1,41 +1,41 @@
 @extends('layouts.app')
 
 @section('content')
-  <br><p><a href="/order" class="btn btn-defult">Go Back</a></p>
-  <h1>create on {{$order->created_at}}</h1>
+  <br><p><a href="/ticket" class="btn btn-defult">Go Back</a></p>
+  <h1>create on {{$ticket->created_at}}</h1>
   <div>
-      {{-- Customer: {!!$order->cid!!} --}}
-      <a href="/user/{{$order->cid}}">Cusomer ID: {!!$order->cid!!}</a>
+      {{-- Customer: {!!$ticket->cid!!} --}}
+      <a href="/user/{{$ticket->cid}}">Cusomer ID: {!!$ticket->cid!!}</a>
   <div>
-      {{-- Customer Confrmation On: {!!$order->cc!!} --}}
-      <a href="/device/{{$order->did}}">Device ID: {!!$order->did!!}</a>
+      {{-- Customer Confrmation On: {!!$ticket->cc!!} --}}
+      <a href="/device/{{$ticket->did}}">Device ID: {!!$ticket->did!!}</a>
   </div>
   <div>
-     Isuse Description ID: {!!$order->cid!!}
+     Isuse Description ID: {!!$ticket->cid!!}
     <div>
-      Color: {!!$order->Color!!}
+      Security Type: {!!$ticket->sop!!}
     </div>
     <div>
-      Color: {!!$order->PN!!}
+      Security code: {!!$ticket->sc!!}
     </div>
     <div>
-      Unit Measurment: {!!$order->UnitMeasurment!!}
+      Belonging: {!!$ticket->Belonging!!}
     </div>
     <div>
-      Quantity: {!!$order->quantity!!}
-    </div>
+        Service Tag: {!!$ticket->st!!}
+      </div>
   <div>
-      User ID: {!!$order->uid!!}
+      User ID: {!!$ticket->uid!!}
   </div>
   <div>
-    Note: {!!$order->note!!}
+    Note: {!!$ticket->note!!}
   </div>
   <hr>
-  <small>Updated at {{$order->updated_at}}</small>
+  <small>Updated at {{$ticket->updated_at}}</small>
   <hr>
-  <a href="/order/{{$order->id}}/edit" class="btn btn-defult">Edit</a>
+  <a href="/ticket/{{$ticket->id}}/edit" class="btn btn-defult">Edit</a>
 
-  {!!Form::open(['action'=>['orderController@destroy', $order->id],'method'=>'POST', 'class' =>"pull-right"])!!}
+  {!!Form::open(['action'=>['ticketController@destroy', $ticket->id],'method'=>'POST', 'class' =>"pull-right"])!!}
     {{Form::hidden('_method', 'DELETE')}}
     {{Form::submit('Delete', ['class'=>'btn btn-danger'])}}
   {!!Form::close()!!}
