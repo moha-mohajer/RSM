@@ -20,7 +20,6 @@ class CreateDevicesTable extends Migration
             $table->string('model')->nullable();
             $table->string('sn')->nullable();
             $table->biginteger('uid')->nullable();
-            $table->string('date');
             $table->string('note')->nullable();
             $table->timestamps();
         });

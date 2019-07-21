@@ -98,7 +98,7 @@ class deviceController extends Controller
     {
 
         // Update Device
-        $Device = devices::find($id);
+        $Device = Device::find($id);
         $Device->type = $request->input('type');
         $Device->brand = $request->input('brand');
         $Device->model = $request->input('model');

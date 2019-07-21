@@ -165,8 +165,8 @@ return [
         //Add new provider to the providers(LaravelCollective Forms & HTML)
         Collective\Html\HtmlServiceProvider::class,
 
-        // //Add Ckeditor provider to the providers
-        // Unisharp\Ckeditor\ServiceProvider::class,
+        //Add Ckeditor provider to the providers
+        Unisharp\Ckeditor\ServiceProvider::class,
 
 
         /*

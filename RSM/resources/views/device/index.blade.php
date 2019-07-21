@@ -7,7 +7,7 @@
         <div class="well">
             <p>
               <h3><a href="/device/{{$device->id}}">{{$device->type}}</a></h3>
-              <small>Writen on {{$device->created_at}}</small>
+              <small>create on {{$device->created_at}}</small>
             </p><br>
         </div>
     @endforeach

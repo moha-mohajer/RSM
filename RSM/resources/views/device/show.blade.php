@@ -4,7 +4,16 @@
   <br><p><a href="/device" class="btn btn-defult">Go Back</a></p>
   <h1>{{$device->type}}</h1>
   <div>
-    {!!$device->brand!!}
+    {!!$device->model!!}
+  </div>
+  <div>
+    SN: {!!$device->sn!!}
+  </div>
+  <div>
+    UID: {!!$device->uid!!}
+  </div>
+  <div>
+    Note: {!!$device->note!!}
   </div>
   <hr>
   <small>Createt at {{$device->created_at}}</small>

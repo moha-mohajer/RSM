@@ -11,10 +11,7 @@
   <div class="form-group">
     {{form::label('brand','Brand')}}
     {{form::text('brand',$device->brand,['class'=>'form-control','placeholder'=>'Device Brand'])}}
-  </div>
-  <div class="form-group">
-    {{form::label('model','Model')}}
-    {{form::Number('model',$device->model,['class'=>'form-control'])}}
+
   </div>
   <div class="form-group">
     {{form::label('model','Model')}}
@@ -32,6 +29,7 @@
       {{form::label('note','Note')}}
       {{form::textarea('note',$device->note,['id'=> 'article-ckeditor','class'=>'form-control','placeholder'=>'Ditails'])}}
   </div>
+  {{form::hidden('_method','PUT')}}
   {{form::submit('submit', ['class'=> ' btn btn-prymary'])}}
 
   {{ Form::close() }}
