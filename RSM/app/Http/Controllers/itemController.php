@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 // Use Eloquent
 use App\Item;
+use App\Order;
+// use App\user;
 // Use SQL qurry by bringing DB Librely
 use  DB;
 
@@ -30,8 +32,26 @@ class itemController extends Controller
      */
     public function create()
     {
+        $orders = order::orderBy('created_at', 'desc')->get();
+        $selectOrder = [];
+        if (count($orders) > 0){
+            foreach ($orders as $order){
+                $selectOrder[$order->id] = $order->id . ".&nbsp;&nbsp;" . $order->description . "&nbsp;&nbsp;&nbsp;" . $order->Color . "&nbsp;&nbsp;&nbsp;" . $order->PN ;
+            } 
+        }
+
+        // $users = user::orderBy('created_at', 'desc')->get();
+        // $selectUser = [];
+        // if (count($users) > 0){
+        //     foreach ($users as $user){
+        //         $selectUser[$user->id] = $user->id . ".&nbsp;&nbsp; Ask admin to add more detailes";
+        //     } 
+        // }
+
         //Load up the view
-        return view('item.create');
+        return view('item.create')->with('selectOrder',$selectOrder
+        //,'selectUser',$selectUser
+        );
     }
 
     /**
@@ -50,6 +70,7 @@ class itemController extends Controller
         $Item->sn = $request->input('sn');
         $Item->supid = $request->input('supid');
         $Item->cpr = $request->input('cpr');
+        $Item->vat = $request->input('vat');
         $Item->cc = $request->input('cc');
         $Item->cancled = $request->input('cancled');
         $Item->ordered = $request->input('ordered');
@@ -62,7 +83,6 @@ class itemController extends Controller
 
         // redirect with success message
         return redirect('/item')->with('success', 'Item Created');
-
     }
 
     /**
@@ -111,6 +131,7 @@ class itemController extends Controller
         $Item->sn = $request->input('sn');
         $Item->supid = $request->input('supid');
         $Item->cpr = $request->input('cpr');
+        $Item->vat = $request->input('vat');
         $Item->cc = $request->input('cc');
         $Item->cancled = $request->input('cancled');
         $Item->ordered = $request->input('ordered');

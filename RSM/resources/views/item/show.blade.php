@@ -14,10 +14,13 @@
     SN: {!!$item->sn!!}</a>
   </div>
   <div>
-    VAT: {!!$item->price!!}
+    Retail Price {!!$item->cpr!!}
   </div>
   <div>
-    Retail Price {!!$item->cpr!!}
+    VAT: {!!$item->vat!!}
+  </div>
+  <div>
+    Total: {!!$item->vat + $item->cpr !!} 
   </div>
   <div>
       Customer Confrmation On: {!!$item->cc!!}
