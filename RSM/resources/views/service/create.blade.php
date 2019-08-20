@@ -2,44 +2,48 @@
 
 @section('content')
 <br>
-  <h1>Add a New Order</h1>
-  {{ Form::open(['action' => 'orderController@store', 'method' =>'POST']) }}
+  <h1>Add a New Service</h1>
+  {{ Form::open(['action' => 'serviceController@store', 'method' =>'POST']) }}
     <div class="form-group">
-      {{form::label('cid','Customer')}}
-      {{form::text('cid','',['class'=>'form-control','placeholder'=>'Customer ID'])}}
+      {{form::label('uid','User')}}
+      {{form::text('uid','',['class'=>'form-control','placeholder'=>'User ID'])}}
     </div>
     <div class="form-group">
-        {{form::label('did','Divice')}}
-        {{form::text('did','',['class'=>'form-control','placeholder'=>'Device ID'])}}
+        {{form::label('tid','Ticket')}}
+        {{form::text('tid','',['class'=>'form-control','placeholder'=>'Ticket ID'])}}
     </div>
     <div class="form-group">
-        {{form::label('description','Description')}}
-        {{form::text('description','',['class'=>'form-control','placeholder'=>'Isuses Description'])}}
+        {{form::label('fr','First recognition')}}
+        {{form::text('fr','',['class'=>'form-control','placeholder'=>'First recognition Description'])}}
     </div>
     <div class="form-group">
-        {{form::label('Color','Color')}}
-        {{form::text('Color','',['class'=>'form-control','placeholder'=>'Color'])}}
+        {{form::label('fs','Final solation')}}
+        {{form::text('fs','',['class'=>'form-control','placeholder'=>'Final solation'])}}
     </div>
     <div class="form-group">
-        {{form::label('PN','Part Number')}}
-        {{form::text('PN','',['class'=>'form-control','placeholder'=>'Part Numbe'])}}
+        {{form::label('orderID','Order')}}
+        {{form::number('orderID','',['class'=>'form-control','Order ID'=>'Order Id'])}}
     </div>
     <div class="form-group">
-        {{form::label('UnitMeasurment','Measurment')}}
-        {{form::text('UnitMeasurment','',['class'=>'form-control','placeholder'=>'Unit Measurment'])}}
-    </div>
-    <div class="form-group">
-        {{form::label('quantity','Quantity')}}
-        {{form::text('quantity','',['class'=>'form-control','placeholder'=>'quantity'])}}
+        {{form::label('sdate','Start at')}}
+        {{form::date('sdate','',['class'=>'form-control','placeholder'=>'Starting date'])}}
     </div> 
-  <div class="form-group">
-      {{form::label('uid','User ID')}}
-      {{form::number('uid','',['class'=>'form-control','placeholder' =>'User ID'])}}
-  </div>
-  <div class="form-group">
-      {{form::label('note','Note')}}
-      {{form::textarea('note','',['id'=> 'article-ckeditor','class'=>'form-control','placeholder'=>'Ditails'])}}
-  </div>
+    <div class="form-group">
+        {{form::label('edate','Estimate finishing date')}}
+        {{form::date('edate','',['class'=>'form-control','placeholder' =>'Estimate finishing date'])}}
+    </div>
+    <div class="form-group">
+        {{form::label('fdate','Finishing date')}}
+        {{form::date('fdate','',['class'=>'form-control','placeholder' =>'Finishing date'])}}
+    </div>
+    <div class="form-group">
+          {{form::label('jp','price')}}
+          {{form::number('jp','',['class'=>'form-control','Order ID'=>'Job Price'])}}
+      </div>
+    <div class="form-group">
+        {{form::label('note','Note')}}
+        {{form::textarea('note','',['id'=> 'article-ckeditor','class'=>'form-control','placeholder'=>'Ditails'])}}
+    </div>
     {{form::submit('submit', ['class'=> ' btn btn-prymary'])}}
   {{ Form::close() }}
 @endsection

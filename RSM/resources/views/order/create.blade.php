@@ -9,7 +9,7 @@
       {{form::text('cid','',['class'=>'form-control','placeholder'=>'Customer ID'])}}
     </div>
     <div class="form-group">
-        {{form::label('did','Divice')}}
+        {{form::label('did','Device')}}
         {{form::text('did','',['class'=>'form-control','placeholder'=>'Device ID'])}}
     </div>
     <div class="form-group">

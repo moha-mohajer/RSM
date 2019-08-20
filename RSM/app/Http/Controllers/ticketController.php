@@ -127,6 +127,7 @@ class ticketController extends Controller
     {
         // Update delete
         $Ticket = Ticket::find($id);
+        
         $Ticket->delete();
 
         // redirect with success message

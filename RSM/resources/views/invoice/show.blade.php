@@ -4,15 +4,12 @@
   <br><p><a href="/invoice" class="btn btn-defult">Go Back</a></p>
   <h1>create on {{$invoice->created_at}}</h1>
   <div>
-    {{-- Cusomer ID: {!!$invoice->cid!!} --}}
    <a href="/user/{{$invoice->cid}}">Cusomer ID: {!!$invoice->cid!!}</a>
   </div>
   <div>
-    {{-- Srvice ID: {!!$invoice->sid!!} --}}
     <a href="/service/{{$invoice->sid}}">Service ID: {!!$invoice->sid!!}</a>
   </div>
   <div>
-    {{-- Item ID: {!!$invoice->iid!!} --}}
     <a href="/item/{{$invoice->iid}}">Item ID: {!!$invoice->iid!!}</a>
   </div>
   <div>

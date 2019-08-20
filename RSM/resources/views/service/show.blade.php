@@ -1,41 +1,47 @@
 @extends('layouts.app')
 
 @section('content')
-  <br><p><a href="/order" class="btn btn-defult">Go Back</a></p>
-  <h1>create on {{$order->created_at}}</h1>
+  <br><p><a href="/service" class="btn btn-defult">Go Back</a></p>
+  <h1>create on {{$service->created_at}}</h1>
   <div>
-      {{-- Customer: {!!$order->cid!!} --}}
-      <a href="/user/{{$order->cid}}">Cusomer ID: {!!$order->cid!!}</a>
+    Service ID: {!!$service->id!!}
   <div>
-      {{-- Customer Confrmation On: {!!$order->cc!!} --}}
-      <a href="/device/{{$order->did}}">Device ID: {!!$order->did!!}</a>
+      <a href="/user/{{$service->uid}}">User ID: {!!$service->uid!!}</a>
   </div>
   <div>
-     Isuse Description ID: {!!$order->cid!!}
-    <div>
-      Color: {!!$order->Color!!}
-    </div>
-    <div>
-      Color: {!!$order->PN!!}
-    </div>
-    <div>
-      Unit Measurment: {!!$order->UnitMeasurment!!}
-    </div>
-    <div>
-      Quantity: {!!$order->quantity!!}
-    </div>
-  <div>
-      User ID: {!!$order->uid!!}
+      <a href="/ticket/{{$service->tid}}">Ticket ID: {!!$service->tid!!}</a>
   </div>
   <div>
-    Note: {!!$order->note!!}
+    Start at: {!!$service->sdate!!}
+  </div>
+  <div>
+    First recognition: {!!$service->fr!!}
+  </div>
+  <div>
+    Expecting to finish at: {!!$service->edate!!}
+  </div>
+  <div>
+    Order: {!!$service->orderId!!}
+    <a href="/user/{{$service->orderId}}">Order ID: {!!$service->orderID!!}</a>
+  </div>
+  <div>
+    Final solation: {!!$service->fs!!}
+  </div>
+  <div>
+    Finished at: {!!$service->fdate!!}
+  </div>
+  <div>
+    Job Price: {!!$service->jp!!}
+  </div>
+  <div>
+    Note: {!!$service->note!!}
   </div>
   <hr>
-  <small>Updated at {{$order->updated_at}}</small>
+  <small>Updated at {{$service->updated_at}}</small>
   <hr>
-  <a href="/order/{{$order->id}}/edit" class="btn btn-defult">Edit</a>
+  <a href="/service/{{$service->id}}/edit" class="btn btn-defult">Edit</a>
 
-  {!!Form::open(['action'=>['orderController@destroy', $order->id],'method'=>'POST', 'class' =>"pull-right"])!!}
+  {!!Form::open(['action'=>['serviceController@destroy', $service->id],'method'=>'POST', 'class' =>"pull-right"])!!}
     {{Form::hidden('_method', 'DELETE')}}
     {{Form::submit('Delete', ['class'=>'btn btn-danger'])}}
   {!!Form::close()!!}

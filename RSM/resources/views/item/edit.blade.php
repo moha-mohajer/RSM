@@ -21,13 +21,51 @@
     {{form::number('cpr',$item->cpr,['class'=>'form-control','placeholder' =>'0.00$'])}}
   </div>
   <div class="form-group">
-      <br><p><a href="/item" class="btn btn-prymary">Confrmed</a>
-      <a href="/item" class="btn btn-prymary">Cancled</a>
-      <a href="/item" class="btn btn-prymary">Ordered</a>
-      <a href="/item" class="btn btn-prymary">Arrived</a>
-      <a href="/item" class="btn btn-prymary">Sold</a>
-      <a href="/item" class="btn btn-prymary">stored</a>
-      <br>
+    {{form::label('vat','VAT Pricetal')}}
+    {{form::number('vat',$item->vat,['class'=>'form-control','placeholder' =>'0.00$'])}}
+  </div>
+  <div class="form-group">     
+      <p>@if($item->cc != NULL)
+        {{form::label('cc','Confrmed date')}}
+        {{form::text('cc',$item->cc,['class'=>'form-control','placeholder' =>'0.00$'])}}
+      @else
+        {{form::label('Confrmed','Confrmed')}}    {{form::checkbox('cc', now(), false)}} &nbsp
+      @endif</p>
+     
+      <p>@if($item->cancled != NULL)
+        {{form::label('cancled','Cancled date')}}
+        {{form::text('cancled',$item->cancled,['class'=>'form-control','placeholder' =>'0.00$'])}}
+      @else
+        {{form::label('Cancled','Cancled')}}    {{form::checkbox('cancled', now(), false)}} &nbsp
+      @endif</p>    
+      
+      <p>@if($item->ordered != NULL)
+        {{form::label('ordered','Ordered date')}}
+        {{form::text('ordered',$item->ordered,['class'=>'form-control','placeholder' =>'0.00$'])}}
+      @else
+        {{form::label('Ordered','Ordered')}}    {{form::checkbox('ordered', now(), false)}} &nbsp
+      @endif</p>     
+      
+      <p>@if($item->arrived != NULL)
+        {{form::label('arrived','Arrived date')}}
+        {{form::text('arrived',$item->arrived,['class'=>'form-control','placeholder' =>'0.00$'])}}
+      @else
+        {{form::label('Arrived','Arrived')}}    {{form::checkbox('arrived', now(), false)}}  &nbsp
+      @endif</p>  
+
+      <p>@if($item->sold != NULL)
+        {{form::label('sold','Solddate')}}
+        {{form::text('sold',$item->sold,['class'=>'form-control','placeholder' =>'0.00$'])}}
+      @else
+        {{form::label('Sold','Sold')}}    {{form::checkbox('Sold', now(), false)}}
+      @endif</p>
+     
+      <p>@if($item->stored != NULL)
+        {{form::label('stored','Stored date')}}
+        {{form::text('stored',$item->stored,['class'=>'form-control','placeholder' =>'0.00$'])}}
+      @else
+        {{form::label('Stors','Stored')}}    {{form::checkbox('stored', now(), false)}}
+      @endif</p>
   </div>
   <div class="form-group">
       {{form::label('uid','User ID')}}
