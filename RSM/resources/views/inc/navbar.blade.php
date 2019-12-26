@@ -1,5 +1,10 @@
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 <nav class="navbar navbar-expand-md navbar-dark bg-dark ">
-        <a class="navbar-brand" href="/">{{config('app.name', 'LSAPP')}}</a>
+        <a class="navbar-brand" href="/">{{config('app.name', 'RSM')}}</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -9,7 +14,8 @@
             <li><a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
             <li><a class="nav-link" href="/about">About</a></li> 
             <li><a class="nav-link" href="/services">Services</a></li>
-            </ul>
+          </ul>
+          
           <ul class = " nav navbar-nav ">
              <li><a class="nav-link" href="/ticket/create">Create Ticket</a></li>
              <li><a class="nav-link" href="/item/create">Create item</a></li>
@@ -19,7 +25,7 @@
              <li><a class="nav-link" href="/service/create">Create service</a></li>
           </ul>
           <ul class = " nav navbar-nav">
-              <li><a class="nav-link" href="/ticket">Tickets</a></li>
+              <li><a cl\ass="nav-link" href="/ticket">Tickets</a></li>
               <li><a class="nav-link" href="/item">Items</a></li>
               <li><a class="nav-link" href="/order">Orders</a></li>
               <li><a class="nav-link" href="/device">Devices</a></li>

@@ -57,7 +57,7 @@
         {{form::label('sold','Solddate')}}
         {{form::text('sold',$item->sold,['class'=>'form-control','placeholder' =>'0.00$'])}}
       @else
-        {{form::label('Sold','Sold')}}    {{form::checkbox('Sold', now(), false)}}
+        {{form::label('Sold','Sold')}}    {{form::checkbox('sold', now(), false)}}
       @endif</p>
      
       <p>@if($item->stored != NULL)

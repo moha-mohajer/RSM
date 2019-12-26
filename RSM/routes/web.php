@@ -27,3 +27,7 @@ Route::resource('order', 'orderController');
 Route::resource('device', 'deviceController');
 Route::resource('item', 'itemController');
 Route::resource('invoice', 'invoiceController');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
