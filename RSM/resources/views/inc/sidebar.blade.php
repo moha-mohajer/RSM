@@ -15,12 +15,13 @@
         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
           <div class="card-body">
             <ul class = " nav navbar-nav ">
-              <li><a class="nav-link" href="/ticket/create">Create Ticket</a></li>
-              <li><a class="nav-link" href="/item/create">Create item</a></li>
-              <li><a class="nav-link" href="/order/create">Create Order</a></li>
-              <li><a class="nav-link" href="/device/create">Create Device</a></li>
-              <li><a class="nav-link" href="/invoice/create">Create invoice</a></li>
-              <li><a class="nav-link" href="/service/create">Create service</a></li>
+              <li><a class="nav-link" href={{ route('register') }}>Register a User</a></li>
+              <li><a class="nav-link" href="/ticket/create">Register a Ticket</a></li>
+              <li><a class="nav-link" href="/item/create">Register an item</a></li>
+              <li><a class="nav-link" href="/order/create">Register an Order</a></li>
+              <li><a class="nav-link" href="/device/create">Register a Device</a></li>
+              <li><a class="nav-link" href="/invoice/create">Register an invoice</a></li>
+              <li><a class="nav-link" href="/service/create">Register a service</a></li>
             </ul>
           </div>
         </div>    
@@ -28,6 +29,7 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
           <div class="card-body">
             <ul class = " nav navbar-nav">
+              <li><a cl\ass="nav-link" href="/User">Users</a></li>
               <li><a cl\ass="nav-link" href="/ticket">Tickets</a></li>
               <li><a class="nav-link" href="/item">Items</a></li>
               <li><a class="nav-link" href="/order">Orders</a></li>
