@@ -10,7 +10,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/app.js') }}" ></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -23,9 +23,19 @@
     <div id="app">
         @include('inc.navbar ')
         @include('inc.sidebar')
-        <main class="py-4">
-            @yield('content')
-        </main>
-    </div>
+        <div class ="container">
+            {{-- includ the messagess --}}
+            @include('inc.messages')
+            <main class="py-4">
+                @yield('content')
+            </main>
+    </div> 
+
+    <!-- scripts -->
+    <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
+        <script>
+        CKEDITOR.replace( 'article-ckeditor' );
+        </script>
 </body>
 </html>
+
