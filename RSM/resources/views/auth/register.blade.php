@@ -14,11 +14,11 @@
             <div class="form-group row">
               <label for="active" class="col-md-4 col-form-label text-md-right">{{ __('active') }}</label>
               <div class="col-md-6">
-                <radio id="active" class="form-control @error('active') is-invalid @enderror" name="active" autofocus>
+                <select id="active" class="form-control @error('active') is-invalid @enderror" name="active" autofocus>
                   <option value="Deactive">Deactive</option>
                   <option value="Active">Active</option>
                   <option value="Active">Truble guy</option>
-                </radio>
+                </select>
                 @error('language')
                 <span class="invalid-feedback" role="alert">
                   <strong>{{ $message }}</strong>
