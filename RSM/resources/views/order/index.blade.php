@@ -13,6 +13,6 @@
     @endforeach
      {{$orders->links()}}
   @else
-  <p>No posts found</p>    
+  <p>No order found</p>    
   @endif
 @endsection

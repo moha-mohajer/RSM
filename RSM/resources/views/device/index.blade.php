@@ -13,6 +13,6 @@
     @endforeach
      {{$devices->links()}}
   @else
-  <p>No posts found</p>    
+  <p>No device found</p>    
   @endif
 @endsection

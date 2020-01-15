@@ -27,7 +27,7 @@
     <div class="form-group">
         {{form::label('sdate','Start at')}}
         {{form::date('sdate','',['class'=>'form-control','placeholder'=>'Starting date'])}}
-    </div> 
+    </div>
     <div class="form-group">
         {{form::label('edate','Estimate finishing date')}}
         {{form::date('edate','',['class'=>'form-control','placeholder' =>'Estimate finishing date'])}}
@@ -38,7 +38,7 @@
     </div>
     <div class="form-group">
           {{form::label('jp','price')}}
-          {{form::number('jp','',['class'=>'form-control','Order ID'=>'Job Price'])}}
+          {{form::number('jp','',['class'=>'form-control','Job Price'=>'Job price'])}}
       </div>
     <div class="form-group">
         {{form::label('note','Note')}}

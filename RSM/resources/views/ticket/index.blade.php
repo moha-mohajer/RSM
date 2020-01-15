@@ -13,6 +13,6 @@
     @endforeach
      {{$tickets->links()}}
   @else
-  <p>No posts found</p>    
+  <p>No ticket found</p>    
   @endif
 @endsection

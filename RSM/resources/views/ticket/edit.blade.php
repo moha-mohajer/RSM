@@ -31,7 +31,7 @@
     <div class="form-group">
         {{form::label('si','Service Tag')}}
         {{form::text('si',$ticket->quantity,['class'=>'form-control','placeholder'=>'Service Tag'])}}
-    </div> 
+    </div>
   <div class="form-group">
       {{form::label('uid','User ID')}}
       {{form::number('uid',$ticket->uid,['class'=>'form-control','placeholder' =>'User ID'])}}

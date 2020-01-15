@@ -13,6 +13,6 @@
     @endforeach
      {{$items->links()}}
   @else
-  <p>No posts found</p>    
+  <p>No item found</p>    
   @endif
 @endsection

@@ -12,6 +12,48 @@
             @csrf
 
             <div class="form-group row">
+              <label for="active" class="col-md-4 col-form-label text-md-right">{{ __('active') }}</label>
+              <div class="col-md-6">
+                <radio id="active" class="form-control @error('active') is-invalid @enderror" name="active" autofocus>
+                  <option value="Deactive">Deactive</option>
+                  <option value="Active">Active</option>
+                  <option value="Active">Truble guy</option>
+                </radio>
+                @error('language')
+                <span class="invalid-feedback" role="alert">
+                  <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="access_level" class="col-md-4 col-form-label text-md-right">{{ __('Access level') }}</label>
+              <div class="col-md-6">
+                <select id="access_level" class="form-control @error('access_level') is-invalid @enderror" name="access_level" autofocus>
+                  <option value="cedr">Create,Edit,Delete,Read</option>
+                  <option value="ced">Create,Edit,Delete/option>
+                  <option value="ce">Create,Edit,Read</option>
+                  <option value="c">Create</option>
+                  <option value="cer">Create,Edit,Read</option>
+                  <option value="cr">Create,Read</option>
+                  <option value="r">Read</option>
+                  <option value="cdr">Create,Delete,Read</option>
+                  <option value="dr">Delete,Read</option>
+                  <option value="d">Delete</option>
+                  <option value="edr">Edit,Delete,Read</option>
+                  <option value="er">Edit,Read</option>
+                  <option value="e">Edit</option>
+                </select>
+                @error('language')
+                <span class="invalid-feedback" role="alert">
+                  <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+              </div>
+            </div>
+
+            <div class="form-group row">
               <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
               <div class="col-md-6">
@@ -112,6 +154,71 @@
                   <option value="Farsi">Farsi/Persian</option>
                 </select>
                 @error('language')
+                <span class="invalid-feedback" role="alert">
+                  <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="date_of_birth" class="col-md-4 col-form-label text-md-right">{{ __('Date of birth') }}</label>
+              <div class="col-md-6">
+                <input id="date_of_birth" type="date" class="form-control @error('date_of_birth') is-invalid @enderror" name="date_of_birth" value="{{ old('date_of_birth') }}" required autocomplete="date_of_birth" autofocus>
+
+                @error('date_of_birth')
+                <span class="invalid-feedback" role="alert">
+                  <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('address') }}</label>
+              <div class="col-md-6">
+                <input id="address" type="textarea" class="form-control @error('address') is-invalid @enderror" name="address" value="{{ old('address') }}" required autocomplete="address" autofocus>
+
+                @error('address')
+                <span class="invalid-feedback" role="alert">
+                  <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="photo" class="col-md-4 col-form-label text-md-right">{{ __('photo') }}</label>
+              <div class="col-md-6">
+                <input id="photo" type="file" class="form-control @error('photo') is-invalid @enderror" name="photo" value="{{ old('photo') }}" required autocomplete="photo" autofocus>
+
+                @error('photo')
+                <span class="invalid-feedback" role="alert">
+                  <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="note" class="col-md-4 col-form-label text-md-right">{{ __('note') }}</label>
+              <div class="col-md-6">
+                <input id="note" type="textarea" class="form-control @error('note') is-invalid @enderror" name="note" value="{{ old('note') }}" required autocomplete="note" autofocus>
+
+                @error('note')
+                <span class="invalid-feedback" role="alert">
+                  <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="user_id" class="col-md-4 col-form-label text-md-right">{{ __('User ID') }}</label>
+              <div class="col-md-6">
+                <input id="user_id" type="number" class="form-control @error('user_id') is-invalid @enderror" name="user_id" value="{{ old('user_id') }}" required autocomplete="user_id" autofocus>
+
+                @error('user_id')
                 <span class="invalid-feedback" role="alert">
                   <strong>{{ $message }}</strong>
                 </span>

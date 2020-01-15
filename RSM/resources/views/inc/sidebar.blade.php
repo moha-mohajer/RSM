@@ -15,13 +15,13 @@
         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
           <div class="card-body">
             <ul class = " nav navbar-nav ">
-              <li><a class="nav-link" href={{ route('register') }}>Register a User</a></li>
-              <li><a class="nav-link" href="/ticket/create">Register a Ticket</a></li>
-              <li><a class="nav-link" href="/item/create">Register an item</a></li>
-              <li><a class="nav-link" href="/order/create">Register an Order</a></li>
-              <li><a class="nav-link" href="/device/create">Register a Device</a></li>
-              <li><a class="nav-link" href="/invoice/create">Register an invoice</a></li>
-              <li><a class="nav-link" href="/service/create">Register a service</a></li>
+              <li><a class="nav-link" href="/User/create">User</a></li>
+              <li><a class="nav-link" href="/ticket/create">Ticket</a></li>
+              <li><a class="nav-link" href="/item/create">Item</a></li>
+              <li><a class="nav-link" href="/order/create">Order</a></li>
+              <li><a class="nav-link" href="/device/create">Device</a></li>
+              <li><a class="nav-link" href="/invoice/create">Invoice</a></li>
+              <li><a class="nav-link" href="/service/create">Service</a></li>
             </ul>
           </div>
         </div>    
@@ -29,8 +29,8 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
           <div class="card-body">
             <ul class = " nav navbar-nav">
-              <li><a cl\ass="nav-link" href="/User">Users</a></li>
-              <li><a cl\ass="nav-link" href="/ticket">Tickets</a></li>
+              <li><a class="nav-link" href="/User">User</a></li>
+              <li><a class="nav-link" href="/ticket">Tickets</a></li>
               <li><a class="nav-link" href="/item">Items</a></li>
               <li><a class="nav-link" href="/order">Orders</a></li>
               <li><a class="nav-link" href="/device">Devices</a></li>

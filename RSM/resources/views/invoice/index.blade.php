@@ -13,6 +13,6 @@
     @endforeach
      {{$invoices->links()}}
   @else
-  <p>No posts found</p>    
+  <p>No invoice found</p>    
   @endif
 @endsection

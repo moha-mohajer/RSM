@@ -27,6 +27,7 @@ Route::resource('order', 'orderController');
 Route::resource('device', 'deviceController');
 Route::resource('item', 'itemController');
 Route::resource('invoice', 'invoiceController');
+Route::resource('User', 'userController');
 
 Auth::routes();
 
