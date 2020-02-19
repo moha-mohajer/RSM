@@ -45,14 +45,14 @@ class orderController extends Controller
 
         // Create Order
         $Order = new Order;
-        $Order->cid = $request->input('cid');
-        $Order->did = $request->input('did');
+        $Order->customer_id = $request->input('customer_id');
+        $Order->device_id = $request->input('device_id');
         $Order->description = $request->input('description');
         $Order->Color = $request->input('Color');
-        $Order->PN = $request->input('PN');
+        $Order->part_number = $request->input('part_number');
         $Order->UnitMeasurment = $request->input('UnitMeasurment');
         $Order->quantity = $request->input('quantity');
-        $Order->uid = $request->input('uid');
+        $Order->user_id = $request->input('user_id');
         $Order->note = $request->input('note');
         $Order->save();
 
@@ -102,14 +102,14 @@ class orderController extends Controller
 
         // Update Order
         $Order = Order::find($id);
-        $Order->cid = $request->input('cid');
-        $Order->did = $request->input('did');
+        $Order->customer_id = $request->input('customer_id');
+        $Order->device_id = $request->input('device_id');
         $Order->description = $request->input('description');
         $Order->Color = $request->input('Color');
-        $Order->PN = $request->input('PN');
+        $Order->part_number = $request->input('part_number');
         $Order->UnitMeasurment = $request->input('UnitMeasurment');
         $Order->quantity = $request->input('quantity');
-        $Order->uid = $request->input('uid');
+        $Order->user_id = $request->input('user_id');
         $Order->note = $request->input('note');
         $Order->save();
 

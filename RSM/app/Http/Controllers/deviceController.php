@@ -48,8 +48,8 @@ class deviceController extends Controller
         $Device->type = $request->input('type');
         $Device->brand = $request->input('brand');
         $Device->model = $request->input('model');
-        $Device->sn = $request->input('sn');
-        $Device->uid = $request->input('uid');
+        $Device->serial_number = $request->input('serial_number');
+        $Device->user_id = $request->input('user_id');
         $Device->note = $request->input('note');
         $Device->save();
 
@@ -102,8 +102,8 @@ class deviceController extends Controller
         $Device->type = $request->input('type');
         $Device->brand = $request->input('brand');
         $Device->model = $request->input('model');
-        $Device->sn = $request->input('sn');
-        $Device->uid = $request->input('uid');
+        $Device->serial_number = $request->input('serial_number');
+        $Device->user_id = $request->input('user_id');
         $Device->note = $request->input('note');
         $Device->save();
 

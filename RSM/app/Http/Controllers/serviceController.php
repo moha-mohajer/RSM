@@ -45,15 +45,15 @@ class serviceController extends Controller
 
         // Create Service
         $Service = new Service;
-        $Service->uid = $request->input('uid');
-        $Service->tid = $request->input('tid');
-        $Service->fr = $request->input('fr');
-        $Service->fs = $request->input('fs');
-        $Service->orderID = $request->input('orderID');
-        $Service->sdate = $request->input('sdate');
-        $Service->edate = $request->input('edate');
-        $Service->fdate = $request->input('fdate');
-        $Service->jp = $request->input('jp');
+        $Service->user_id = $request->input('user_id');
+        $Service->ticket_id = $request->input('ticket_id');
+        $Service->first_recognition = $request->input('first_recognition');
+        $Service->final_solution = $request->input('final_solution');
+        $Service->order_id = $request->input('order_id');
+        $Service->start_at = $request->input('start_at');
+        $Service->expecting_finish_at = $request->input('expecting_finish_at');
+        $Service->finish_at = $request->input('finish_at');
+        $Service->fee = $request->input('fee');
         $Service->note = $request->input('note');
         $Service->save();
 
@@ -103,15 +103,15 @@ class serviceController extends Controller
 
         // Update Service
         $Service = Service::find($id);
-        $Service->uid = $request->input('uid');
-        $Service->tid = $request->input('tid');
-        $Service->fr = $request->input('fr');
-        $Service->fs = $request->input('fs');
-        $Service->orderID = $request->input('orderID');
-        $Service->sdate = $request->input('sdate');
-        $Service->edate = $request->input('edate');
-        $Service->fdate = $request->input('fdate');
-        $Service->jp = $request->input('jp');
+        $Service->user_id = $request->input('user_id');
+        $Service->ticket_id = $request->input('ticket_id');
+        $Service->first_recognition = $request->input('first_recognition');
+        $Service->final_solution = $request->input('final_solution');
+        $Service->order_id = $request->input('order_id');
+        $Service->start_at = $request->input('start_at');
+        $Service->expecting_finish_at = $request->input('expecting_finish_at');
+        $Service->finish_at = $request->input('finish_at');
+        $Service->fee = $request->input('fee');
         $Service->note = $request->input('note');
         $Service->save();
 

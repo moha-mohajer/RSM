@@ -17,12 +17,12 @@
       {{form::text('model','',['class'=>'form-control','placeholder'=>'Device Model or Model Number'])}}
     </div>
     <div class="form-group">
-      {{form::label('sn','Serial number')}}
-      {{form::text('sn','',['class'=>'form-control','placeholder'=>'Serial Number'])}}
+      {{form::label('serial_number','Serial number')}}
+      {{form::text('serial_number','',['class'=>'form-control','placeholder'=>'Serial Number'])}}
     </div>
     <div class="form-group">
-      {{form::label('uid','User ID')}}
-      {{form::text('uid','',['class'=>'form-control','placeholder' =>'User ID'])}}
+      {{form::label('user_id','User ID')}}
+      {{form::text('user_id','',['class'=>'form-control','placeholder' =>'User ID'])}}
     </div>
     <div class="form-group">
         {{form::label('note','Note')}}

@@ -45,9 +45,9 @@ class invoiceController extends Controller
 
         // Create Invoice
         $Invoice = new Invoice;
-        $Invoice->cid = $request->input('cid');
-        $Invoice->sid = $request->input('sid');
-        $Invoice->iid = $request->input('iid');
+        $Invoice->customer_id = $request->input('customer_id');
+        $Invoice->service_id = $request->input('service_id');
+        $Invoice->item_id = $request->input('item_id');
         $Invoice->tax = $request->input('tax');
         $Invoice->total = $request->input('total');
         $Invoice->dicount = $request->input('dicount');
@@ -101,9 +101,9 @@ class invoiceController extends Controller
 
         // Update Invoice
         $Invoice = Invoice::find($id);
-        $Invoice->cid = $request->input('cid');
-        $Invoice->sid = $request->input('sid');
-        $Invoice->iid = $request->input('iid');
+        $Invoice->customer_id = $request->input('customer_id');
+        $Invoice->service_id = $request->input('service_id');
+        $Invoice->item_id = $request->input('item_id');
         $Invoice->tax = $request->input('tax');
         $Invoice->total = $request->input('total');
         $Invoice->dicount = $request->input('dicount');

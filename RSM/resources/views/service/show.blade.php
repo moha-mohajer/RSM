@@ -6,32 +6,32 @@
   <div>
     Service ID: {!!$service->id!!}
   <div>
-      <a href="/user/{{$service->uid}}">User ID: {!!$service->uid!!}</a>
+      <a href="/user/{{$service->user_id}}">User ID: {!!$service->user_id!!}</a>
   </div>
   <div>
-      <a href="/ticket/{{$service->tid}}">Ticket ID: {!!$service->tid!!}</a>
+      <a href="/ticket/{{$service->ticket_id}}">Ticket ID: {!!$service->ticket_id!!}</a>
   </div>
   <div>
-    Start at: {!!$service->sdate!!}
+    Start at: {!!$service->start_at!!}
   </div>
   <div>
-    First recognition: {!!$service->fr!!}
+    First recognition: {!!$service->first_recognition!!}
   </div>
   <div>
-    Expecting to finish at: {!!$service->edate!!}
+    Expecting to finish at: {!!$service->expecting_finish_at!!}
   </div>
   <div>
     Order: {!!$service->orderId!!}
-    <a href="/user/{{$service->orderId}}">Order ID: {!!$service->orderID!!}</a>
+    <a href="/user/{{$service->orderId}}">Order ID: {!!$service->order_id!!}</a>
   </div>
   <div>
-    Final solation: {!!$service->fs!!}
+    Final solation: {!!$service->final_solution!!}
   </div>
   <div>
-    Finished at: {!!$service->fdate!!}
+    Finished at: {!!$service->finish_at!!}
   </div>
   <div>
-    Job Price: {!!$service->jp!!}
+    Job Price: {!!$service->fee!!}
   </div>
   <div>
     Note: {!!$service->note!!}

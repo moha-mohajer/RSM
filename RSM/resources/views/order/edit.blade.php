@@ -5,12 +5,12 @@
   <h1>Edit a Order</h1>
   {{ Form::open(['action' => ['orderController@update', $order->id], 'method' =>'POST']) }}
   <div class="form-group">
-      {{form::label('cid','Customer')}}
-      {{form::text('cid',$order->cid,['class'=>'form-control','placeholder'=>'Customer ID'])}}
+      {{form::label('customer_id','Customer')}}
+      {{form::text('customer_id',$order->customer_id,['class'=>'form-control','placeholder'=>'Customer ID'])}}
     </div>
     <div class="form-group">
-        {{form::label('did','Device')}}
-        {{form::text('did',$order->did,['class'=>'form-control','placeholder'=>'Device ID'])}}
+        {{form::label('device_id','Device')}}
+        {{form::text('device_id',$order->device_id,['class'=>'form-control','placeholder'=>'Device ID'])}}
     </div>
     <div class="form-group">
         {{form::label('description','Description')}}
@@ -21,8 +21,8 @@
         {{form::text('Color',$order->Color,['class'=>'form-control','placeholder'=>'Color'])}}
     </div>
     <div class="form-group">
-        {{form::label('PN','Part Number')}}
-        {{form::text('PN',$order->PN,['class'=>'form-control','placeholder'=>'Part Numbe'])}}
+        {{form::label('part_number','Part Number')}}
+        {{form::text('part_number',$order->part_number,['class'=>'form-control','placeholder'=>'Part Numbe'])}}
     </div>
     <div class="form-group">
         {{form::label('UnitMeasurment','Measurment')}}
@@ -33,8 +33,8 @@
         {{form::text('quantity',$order->quantity,['class'=>'form-control','placeholder'=>'quantity'])}}
     </div> 
   <div class="form-group">
-      {{form::label('uid','User ID')}}
-      {{form::number('uid',$order->note,['class'=>'form-control','placeholder' =>'User ID'])}}
+      {{form::label('user_id','User ID')}}
+      {{form::number('user_id',$order->note,['class'=>'form-control','placeholder' =>'User ID'])}}
   </div>
   <div class="form-group">
       {{form::label('note','Note')}}

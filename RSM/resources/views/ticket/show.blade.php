@@ -4,28 +4,28 @@
   <br><p><a href="/ticket" class="btn btn-defult">Go Back</a></p>
   <h1>create on {{$ticket->created_at}}</h1>
   <div>
-      {{-- Customer: {!!$ticket->cid!!} --}}
-      <a href="/user/{{$ticket->cid}}">Cusomer ID: {!!$ticket->cid!!}</a>
+      {{-- Customer: {!!$ticket->customer_id!!} --}}
+      <a href="/user/{{$ticket->customer_id}}">Cusomer ID: {!!$ticket->customer_id!!}</a>
   <div>
-      {{-- Customer Confrmation On: {!!$ticket->cc!!} --}}
-      <a href="/device/{{$ticket->did}}">Device ID: {!!$ticket->did!!}</a>
+      {{-- Customer Confrmation On: {!!$ticket->customer_confirmation!!} --}}
+      <a href="/device/{{$ticket->device_id}}">Device ID: {!!$ticket->device_id!!}</a>
   </div>
   <div>
-     Isuse Description ID: {!!$ticket->cid!!}
+     Isuse Description ID: {!!$ticket->customer_id!!}
     <div>
-      Security Type: {!!$ticket->sop!!}
+      Security Type: {!!$ticket->security_type!!}
     </div>
     <div>
-      Security code: {!!$ticket->sc!!}
+      Security code: {!!$ticket->security_code!!}
     </div>
     <div>
       Belonging: {!!$ticket->Belonging!!}
     </div>
     <div>
-        Service Tag: {!!$ticket->st!!}
+        Service Tag: {!!$ticket->ticket_tag!!}
       </div>
   <div>
-      User ID: {!!$ticket->uid!!}
+      User ID: {!!$ticket->user_id!!}
   </div>
   <div>
     Note: {!!$ticket->note!!}

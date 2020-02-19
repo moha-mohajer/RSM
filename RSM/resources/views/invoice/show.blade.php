@@ -4,13 +4,13 @@
   <br><p><a href="/invoice" class="btn btn-defult">Go Back</a></p>
   <h1>create on {{$invoice->created_at}}</h1>
   <div>
-   <a href="/user/{{$invoice->cid}}">Cusomer ID: {!!$invoice->cid!!}</a>
+   <a href="/user/{{$invoice->customer_id}}">Cusomer ID: {!!$invoice->customer_id!!}</a>
   </div>
   <div>
-    <a href="/service/{{$invoice->sid}}">Service ID: {!!$invoice->sid!!}</a>
+    <a href="/service/{{$invoice->service_id}}">Service ID: {!!$invoice->service_id!!}</a>
   </div>
   <div>
-    <a href="/item/{{$invoice->iid}}">Item ID: {!!$invoice->iid!!}</a>
+    <a href="/item/{{$invoice->item_id}}">Item ID: {!!$invoice->item_id!!}</a>
   </div>
   <div>
     VAT: {!!$invoice->tax!!}
@@ -19,7 +19,7 @@
     total {!!$invoice->total!!}
   </div>
   <div>
-    SN: {!!$invoice->dicount!!}
+    serial_number: {!!$invoice->dicount!!}
   </div>
   <div>
     Total Amount: {!!$invoice->pay!!}

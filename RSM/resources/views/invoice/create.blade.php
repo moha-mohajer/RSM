@@ -5,17 +5,17 @@
   <h1>Add a New Invoice</h1>
   {{ Form::open(['action' => 'invoiceController@store', 'method' =>'POST']) }}
     <div class="form-group">
-      {{form::label('cid','Customer')}}
-      {{form::text('cid','',['class'=>'form-control','placeholder'=>'Customet ID'])}}
+      {{form::label('customer_id','Customer')}}
+      {{form::text('customer_id','',['class'=>'form-control','placeholder'=>'Customet ID'])}}
   </div>
   <div class="form-group">
-    {{form::label('sid','Service')}}
-    {{form::text('sid','',['class'=>'form-control','placeholder'=>'Service ID'])}}
+    {{form::label('service_id','Service')}}
+    {{form::text('service_id','',['class'=>'form-control','placeholder'=>'Service ID'])}}
 
   </div>
   <div class="form-group">
-    {{form::label('iid','Item')}}
-    {{form::text('iid','',['class'=>'form-control','placeholder'=>'Item Number'])}}
+    {{form::label('item_id','Item')}}
+    {{form::text('item_id','',['class'=>'form-control','placeholder'=>'Item Number'])}}
   </div>
   <div class="form-group">
     {{form::label('tax','VAT')}}

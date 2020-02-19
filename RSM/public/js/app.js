@@ -10308,10 +10308,10 @@ var acceptData = function( owner ) {
 
 
 function Data() {
-	this.expando = jQuery.expando + Data.uid++;
+	this.expando = jQuery.expando + Data.user_id++;
 }
 
-Data.uid = 1;
+Data.user_id = 1;
 
 Data.prototype = {
 
@@ -14987,7 +14987,7 @@ jQuery.param = function( a, traditional ) {
 	} else {
 
 		// If traditional, encode the "old" way (the way 1.3.2 or older
-		// did it), otherwise encode params recursively.
+		// device_id it), otherwise encode params recursively.
 		for ( prefix in a ) {
 			buildParams( prefix, a[ prefix ], traditional, add );
 		}
@@ -18329,8 +18329,8 @@ return jQuery;
 
     /** Used to detect methods masquerading as native. */
     var maskSrcKey = (function() {
-      var uid = /[^.]+$/.exec(coreJsData && coreJsData.keys && coreJsData.keys.IE_PROTO || '');
-      return uid ? ('Symbol(src)_1.' + uid) : '';
+      var user_id = /[^.]+$/.exec(coreJsData && coreJsData.keys && coreJsData.keys.IE_PROTO || '');
+      return user_id ? ('Symbol(src)_1.' + user_id) : '';
     }());
 
     /**
@@ -37905,7 +37905,7 @@ var formatComponentName = (noop);
     if (vm.$root === vm) {
       return '<Root>'
     }
-    var options = typeof vm === 'function' && vm.cid != null
+    var options = typeof vm === 'function' && vm.customer_id != null
       ? vm.options
       : vm._isVue
         ? vm.$options || vm.constructor.options
@@ -37965,14 +37965,14 @@ var formatComponentName = (noop);
 
 /*  */
 
-var uid = 0;
+var user_id = 0;
 
 /**
  * A dep is an observable that can have multiple
  * directives subscribing to it.
  */
 var Dep = function Dep () {
-  this.id = uid++;
+  this.id = user_id++;
   this.subs = [];
 };
 
@@ -39812,7 +39812,7 @@ function normalizeScopedSlots (
   if (!slots) {
     res = {};
   } else if (slots._normalized) {
-    // fast path 1: child component re-render only, parent did not change
+    // fast path 1: child component re-render only, parent device_id not change
     return slots._normalized
   } else if (
     isStable &&
@@ -40460,7 +40460,7 @@ function createComponent (
 
   // async component
   var asyncFactory;
-  if (isUndef(Ctor.cid)) {
+  if (isUndef(Ctor.customer_id)) {
     asyncFactory = Ctor;
     Ctor = resolveAsyncComponent(asyncFactory, baseCtor);
     if (Ctor === undefined) {
@@ -40521,7 +40521,7 @@ function createComponent (
   // return a placeholder vnode
   var name = Ctor.options.name || tag;
   var vnode = new VNode(
-    ("vue-component-" + (Ctor.cid) + (name ? ("-" + name) : '')),
+    ("vue-component-" + (Ctor.customer_id) + (name ? ("-" + name) : '')),
     data, undefined, undefined, undefined, context,
     { Ctor: Ctor, propsData: propsData, listeners: listeners, tag: tag, children: children },
     asyncFactory
@@ -41667,7 +41667,7 @@ function queueWatcher (watcher) {
 
 
 
-var uid$2 = 0;
+var user_id$2 = 0;
 
 /**
  * A watcher parses an expression, collects dependencies,
@@ -41697,7 +41697,7 @@ var Watcher = function Watcher (
     this.deep = this.user = this.lazy = this.sync = false;
   }
   this.cb = cb;
-  this.id = ++uid$2; // uid for batching
+  this.id = ++user_id$2; // user_id for batching
   this.active = true;
   this.dirty = this.lazy; // for lazy watchers
   this.deps = [];
@@ -42213,13 +42213,13 @@ function stateMixin (Vue) {
 
 /*  */
 
-var uid$3 = 0;
+var user_id$3 = 0;
 
 function initMixin (Vue) {
   Vue.prototype._init = function (options) {
     var vm = this;
-    // a uid
-    vm._uid = uid$3++;
+    // a user_id
+    vm._uid = user_id$3++;
 
     var startTag, endTag;
     /* istanbul ignore if */
@@ -42378,11 +42378,11 @@ function initMixin$1 (Vue) {
 function initExtend (Vue) {
   /**
    * Each instance constructor, including Vue, has a unique
-   * cid. This enables us to create wrapped "child
+   * customer_id. This enables us to create wrapped "child
    * constructors" for prototypal inheritance and cache them.
    */
-  Vue.cid = 0;
-  var cid = 1;
+  Vue.customer_id = 0;
+  var customer_id = 1;
 
   /**
    * Class inheritance
@@ -42390,7 +42390,7 @@ function initExtend (Vue) {
   Vue.extend = function (extendOptions) {
     extendOptions = extendOptions || {};
     var Super = this;
-    var SuperId = Super.cid;
+    var SuperId = Super.customer_id;
     var cachedCtors = extendOptions._Ctor || (extendOptions._Ctor = {});
     if (cachedCtors[SuperId]) {
       return cachedCtors[SuperId]
@@ -42406,7 +42406,7 @@ function initExtend (Vue) {
     };
     Sub.prototype = Object.create(Super.prototype);
     Sub.prototype.constructor = Sub;
-    Sub.cid = cid++;
+    Sub.customer_id = customer_id++;
     Sub.options = mergeOptions(
       Super.options,
       extendOptions
@@ -42604,8 +42604,8 @@ var KeepAlive = {
       var keys = ref$1.keys;
       var key = vnode.key == null
         // same constructor may get registered as different local components
-        // so cid alone is not enough (#3269)
-        ? componentOptions.Ctor.cid + (componentOptions.tag ? ("::" + (componentOptions.tag)) : '')
+        // so customer_id alone is not enough (#3269)
+        ? componentOptions.Ctor.customer_id + (componentOptions.tag ? ("::" + (componentOptions.tag)) : '')
         : vnode.key;
       if (cache[key]) {
         vnode.componentInstance = cache[key].componentInstance;
@@ -43189,7 +43189,7 @@ function createPatchFunction (backend) {
         }
         if (isUnknownElement$$1(vnode, creatingElmInVPre)) {
           warn(
-            'Unknown custom element: <' + tag + '> - did you ' +
+            'Unknown custom element: <' + tag + '> - device_id you ' +
             'register the component correctly? For recursive components, ' +
             'make sure to provide the "name" option.',
             vnode.context

@@ -18,8 +18,8 @@ class CreateDevicesTable extends Migration
             $table->string('type')->nullable();
             $table->string('brand')->nullable();
             $table->string('model')->nullable();
-            $table->string('sn')->nullable();
-            $table->biginteger('uid')->nullable();
+            $table->string('serial_number')->nullable();
+            $table->biginteger('user_id')->nullable();
             $table->string('note')->nullable();
             $table->timestamps();
         });

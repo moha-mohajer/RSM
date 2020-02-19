@@ -4,19 +4,19 @@
   <br><p><a href="/order" class="btn btn-defult">Go Back</a></p>
   <h1>create on {{$order->created_at}}</h1>
   <div>
-      {{-- Customer: {!!$order->cid!!} --}}
-      <a href="/user/{{$order->cid}}">Cusomer ID: {!!$order->cid!!}</a>
+      {{-- Customer: {!!$order->customer_id!!} --}}
+      <a href="/user/{{$order->customer_id}}">Cusomer ID: {!!$order->customer_id!!}</a>
   <div>
-      {{-- Customer Confrmation On: {!!$order->cc!!} --}}
-      <a href="/device/{{$order->did}}">Device ID: {!!$order->did!!}</a>
+      {{-- Customer Confrmation On: {!!$order->customer_confirmation!!} --}}
+      <a href="/device/{{$order->device_id}}">Device ID: {!!$order->device_id!!}</a>
   </div>
   <div>
-     Isuse Description ID: {!!$order->cid!!}
+     Isuse Description ID: {!!$order->customer_id!!}
     <div>
       Color: {!!$order->Color!!}
     </div>
     <div>
-      Color: {!!$order->PN!!}
+      Color: {!!$order->part_number!!}
     </div>
     <div>
       Unit Measurment: {!!$order->UnitMeasurment!!}
@@ -25,7 +25,7 @@
       Quantity: {!!$order->quantity!!}
     </div>
   <div>
-      User ID: {!!$order->uid!!}
+      User ID: {!!$order->user_id!!}
   </div>
   <div>
     Note: {!!$order->note!!}

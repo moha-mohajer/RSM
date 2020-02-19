@@ -7,10 +7,10 @@
     {!!$device->model!!}
   </div>
   <div>
-    SN: {!!$device->sn!!}
+    Serial number: {!!$device->serial_number!!}
   </div>
   <div>
-    UID: {!!$device->uid!!}
+    UID: {!!$device->user_id!!}
   </div>
   <div>
     Note: {!!$device->note!!}

@@ -4,48 +4,66 @@
   <br><p><a href="/item" class="btn btn-defult">Go Back</a></p>
   <h1>create on {{$item->created_at}}</h1>
   <div>
-    {{-- Cusomer ID: {!!$item->obid!!} --}}
-   <a href="/user/{{$item->obid}}">Cusomer ID: {!!$item->obid!!}</a>
+    {{-- Cusomer ID: {!!$item->order_id!!} --}}
+   <a href="/user/{{$item->order_id}}">Cusomer ID: {!!$item->order_id!!}</a>
+ 
   <div>
-    {{-- Item ID: {!!$item->supid!!} --}}
-    <a href="/item/{{$item->supid}}">Item ID: {!!$item->supid!!}</a>
+    {{-- Item ID: {!!$item->supplier_id!!} --}}
+    <a href="/item/{{$item->supplier_id}}">Supplier ID: {!!$item->supplier_id!!}</a>
   </div>
+
   <div>
-    SN: {!!$item->sn!!}</a>
+    Internet_link: {!!$item->internet_link!!}</a>
   </div>
+
   <div>
-    Retail Price {!!$item->cpr!!}
+    serialnumber: {!!$item->serial_number!!}</a>
   </div>
+
+  <div>
+    Retail Price {!!$item->customer_price!!}
+  </div>
+
   <div>
     VAT: {!!$item->vat!!}
   </div>
+
   <div>
-    Total: {!!$item->vat + $item->cpr !!} 
+    Total: {!!$item->vat + $item->customer_price !!} 
   </div>
+
   <div>
-      Customer Confrmation On: {!!$item->cc!!}
+      Customer Confrmation On: {!!$item->customer_confirmation!!}
   </div>
+
   <div>
       Customer cancle On: {!!$item->cancled!!}
   </div>
+
   <div>
       Ordare on: {!!$item->order!!}
   </div>
+
   <div>
       Item arrived at: {!!$item->arrived!!}
   </div>
+
   <div>
       Sold On: {!!$item->sold!!}
   </div>
+
   <div>
       Stored at: {!!$item->stored!!}
   </div>
+
   <div>
-      User ID: {!!$item->uid!!}
+      User ID: {!!$item->user_id!!}
   </div>
+
   <div>
     Note: {!!$item->note!!}
   </div>
+
   <hr>
   <small>Updated at {{$item->updated_at}}</small>
   <hr>

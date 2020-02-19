@@ -5,40 +5,40 @@
   <h1>Add a New Service</h1>
   {{ Form::open(['action' => 'serviceController@store', 'method' =>'POST']) }}
     <div class="form-group">
-      {{form::label('uid','User')}}
-      {{form::text('uid','',['class'=>'form-control','placeholder'=>'User ID'])}}
+      {{form::label('user_id','User')}}
+      {{form::text('user_id','',['class'=>'form-control','placeholder'=>'User ID'])}}
     </div>
     <div class="form-group">
-        {{form::label('tid','Ticket')}}
-        {{form::text('tid','',['class'=>'form-control','placeholder'=>'Ticket ID'])}}
+        {{form::label('ticket_id','Ticket')}}
+        {{form::text('ticket_id','',['class'=>'form-control','placeholder'=>'Ticket ID'])}}
     </div>
     <div class="form-group">
-        {{form::label('fr','First recognition')}}
-        {{form::text('fr','',['class'=>'form-control','placeholder'=>'First recognition Description'])}}
+        {{form::label('first_recognition','First recognition')}}
+        {{form::text('first_recognition','',['class'=>'form-control','placeholder'=>'First recognition Description'])}}
     </div>
     <div class="form-group">
-        {{form::label('fs','Final solation')}}
-        {{form::text('fs','',['class'=>'form-control','placeholder'=>'Final solation'])}}
+        {{form::label('final_solution','Final solation')}}
+        {{form::text('final_solution','',['class'=>'form-control','placeholder'=>'Final solation'])}}
     </div>
     <div class="form-group">
-        {{form::label('orderID','Order')}}
-        {{form::number('orderID','',['class'=>'form-control','Order ID'=>'Order Id'])}}
+        {{form::label('order_id','Order')}}
+        {{form::number('order_id','',['class'=>'form-control','Order ID'=>'Order Id'])}}
     </div>
     <div class="form-group">
-        {{form::label('sdate','Start at')}}
-        {{form::date('sdate','',['class'=>'form-control','placeholder'=>'Starting date'])}}
+        {{form::label('start_at','Start at')}}
+        {{form::date('start_at','',['class'=>'form-control','placeholder'=>'Starting date'])}}
     </div>
     <div class="form-group">
-        {{form::label('edate','Estimate finishing date')}}
-        {{form::date('edate','',['class'=>'form-control','placeholder' =>'Estimate finishing date'])}}
+        {{form::label('expecting_finish_at','Estimate finishing date')}}
+        {{form::date('expecting_finish_at','',['class'=>'form-control','placeholder' =>'Estimate finishing date'])}}
     </div>
     <div class="form-group">
-        {{form::label('fdate','Finishing date')}}
-        {{form::date('fdate','',['class'=>'form-control','placeholder' =>'Finishing date'])}}
+        {{form::label('finish_at','Finishing date')}}
+        {{form::date('finish_at','',['class'=>'form-control','placeholder' =>'Finishing date'])}}
     </div>
     <div class="form-group">
-          {{form::label('jp','price')}}
-          {{form::number('jp','',['class'=>'form-control','Job Price'=>'Job price'])}}
+          {{form::label('fee','price')}}
+          {{form::number('fee','',['class'=>'form-control','Job Price'=>'Job price'])}}
       </div>
     <div class="form-group">
         {{form::label('note','Note')}}

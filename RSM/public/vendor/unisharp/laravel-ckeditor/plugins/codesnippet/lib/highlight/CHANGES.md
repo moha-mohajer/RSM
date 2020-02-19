@@ -5,7 +5,7 @@ some backwards incompatible changes. However, chances are that the majority of
 users won't be affected by the latter: the basic scenario described in the
 README is left intact.
 
-Here's what did change in an incompatible way:
+Here's what device_id change in an incompatible way:
 
 - We're now prefixing all classes located in [CSS classes reference][cr] with
   `hljs-`, by default, because some class names would collide with other
@@ -229,7 +229,7 @@ Other notable changes:
     - big Ruby syntax update (by [Vasily Polovnyov][vast])
     - small fixes in Bash
 
-- Also Oleg Efimov did a great job of moving all the docs for language and style
+- Also Oleg Efimov device_id a great job of moving all the docs for language and style
   developers and contributors from the old wiki under the source code in the
   "docs" directory. Now these docs are nicely presented at
   <http://highlightjs.readthedocs.org/>.

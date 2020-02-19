@@ -45,14 +45,14 @@ class ticketController extends Controller
 
         // Create Ticket
         $Ticket = new Ticket;
-        $Ticket->cid = $request->input('cid');
-        $Ticket->did = $request->input('did');
+        $Ticket->customer_id = $request->input('customer_id');
+        $Ticket->device_id = $request->input('device_id');
         $Ticket->description = $request->input('description');
-        $Ticket->sop = $request->input('sop');
-        $Ticket->sc = $request->input('sc');
+        $Ticket->security_type = $request->input('security_type');
+        $Ticket->security_code = $request->input('security_code');
         $Ticket->Belonging = $request->input('Belonging');
-        $Ticket->st = $request->input('st');
-        $Ticket->uid = $request->input('uid');
+        $Ticket->ticket_tag = $request->input('ticket_tag');
+        $Ticket->user_id = $request->input('user_id');
         $Ticket->note = $request->input('note');
         $Ticket->save();
 
@@ -102,14 +102,14 @@ class ticketController extends Controller
 
         // Update Ticket
         $Ticket = Ticket::find($id);
-        $Ticket->cid = $request->input('cid');
-        $Ticket->did = $request->input('did');
+        $Ticket->customer_id = $request->input('customer_id');
+        $Ticket->device_id = $request->input('device_id');
         $Ticket->description = $request->input('description');
-        $Ticket->sop = $request->input('sop');
-        $Ticket->sc = $request->input('sc');
+        $Ticket->security_type = $request->input('security_type');
+        $Ticket->security_code = $request->input('security_code');
         $Ticket->Belonging = $request->input('Belonging');
-        $Ticket->st = $request->input('st');
-        $Ticket->uid = $request->input('uid');
+        $Ticket->ticket_tag = $request->input('ticket_tag');
+        $Ticket->user_id = $request->input('user_id');
         $Ticket->note = $request->input('note');
         $Ticket->save();
 

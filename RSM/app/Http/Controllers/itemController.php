@@ -36,7 +36,7 @@ class itemController extends Controller
         $selectOrder = [];
         if (count($orders) > 0){
             foreach ($orders as $order){
-                $selectOrder[$order->id] = $order->id . ".&nbsp;&nbsp;" . $order->description . "&nbsp;&nbsp;&nbsp;" . $order->Color . "&nbsp;&nbsp;&nbsp;" . $order->PN ;
+                $selectOrder[$order->id] = $order->id . ".&nbsp;&nbsp;" . $order->description . "&nbsp;&nbsp;&nbsp;" . $order->Color . "&nbsp;&nbsp;&nbsp;" . $order->part_number ;
             } 
         }
 
@@ -65,19 +65,20 @@ class itemController extends Controller
 
         // Create Item
         $Item = new Item;
-        $Item->obid = $request->input('obid');
+        $Item->order_id = $request->input('order_id');
         $Item->price = $request->input('price');
-        $Item->sn = $request->input('sn');
-        $Item->supid = $request->input('supid');
-        $Item->cpr = $request->input('cpr');
+        $Item->serial_number = $request->input('serial_number');
+        $Item->supplier_id = $request->input('supplier_id');
+        $Item->internet_link = $request->input('internet_link');
+        $Item->customer_price = $request->input('customer_price');
         $Item->vat = $request->input('vat');
-        $Item->cc = $request->input('cc');
+        $Item->customer_confirmation = $request->input('customer_confirmation');
         $Item->cancled = $request->input('cancled');
         $Item->ordered = $request->input('ordered');
         $Item->arrived = $request->input('arrived');
         $Item->sold = $request->input('sold');
         $Item->stored = $request->input('stored');
-        $Item->uid = $request->input('uid');
+        $Item->user_id = $request->input('user_id');
         $Item->note = $request->input('note');
         $Item->save();
 
@@ -126,19 +127,20 @@ class itemController extends Controller
 
         // Update Item
         $Item = Item::find($id);
-        $Item->obid = $request->input('obid');
+        $Item->order_id = $request->input('order_id');
         $Item->price = $request->input('price');
-        $Item->sn = $request->input('sn');
-        $Item->supid = $request->input('supid');
-        $Item->cpr = $request->input('cpr');
+        $Item->serial_number = $request->input('serial_number');
+        $Item->supplier_id = $request->input('supplier_id');
+        $Item->internet_link = $request->input('internet_link');
+        $Item->customer_price = $request->input('customer_price');
         $Item->vat = $request->input('vat');
-        $Item->cc = $request->input('cc');
+        $Item->customer_confirmation = $request->input('customer_confirmation');
         $Item->cancled = $request->input('cancled');
         $Item->ordered = $request->input('ordered');
         $Item->arrived = $request->input('arrived');
         $Item->sold = $request->input('sold');
         $Item->stored = $request->input('stored');
-        $Item->uid = $request->input('uid');
+        $Item->user_id = $request->input('user_id');
         $Item->note = $request->input('note');
         $Item->save();
 
