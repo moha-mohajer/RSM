@@ -25,7 +25,7 @@ class CreateUsersTable extends Migration
             $table->timestamp('phone_number_verified_at')->nullable();
             $table->string('language')->nullable();
             $table->date('date_of_birth')->nullable();
-            $table->string('access_level')->nullable();
+            $table->bigIncrements('access_level')->nullable();
             $table->mediumText('address')->nullable();
             $table->String('photo')->nullable();
             $table->String('note')->nullable();

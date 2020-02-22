@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 // Use Eloquent
 use App\User;
 // Use SQL qurry by bringing DB Librely
@@ -46,18 +47,17 @@ class userController extends Controller
         // Create User
         $User = new User;
         $User->status = "DeActive";
-        $User->access_level = "Customer";
+        $User->access_level = '0';
         $User->name = $request->input('name');
-        $User->surname = $request->input('surname');
+        $User->surname = $request->input('sur_name');
         $User->email = $request->input('email');
         $User->user_name = $request->input('user_name');
         $User->password = Hash::make($request->input('password'));
         $User->phone_number = $request->input('phone_number');
-        $language= $request->input('language');
+        $language = $request->input('language');
         $language = implode(', ', $language);
         $User->language = $language;
         $User->date_of_birth = $request->input('date_of_birth');
-        $User->access_level = $request->input('access_level');
         $User->address = $request->input('address');
         $User->photo = $request->input('photo');
         $User->note = $request->input('note');
@@ -65,7 +65,7 @@ class userController extends Controller
         $User->save();
 
         // redirect with success message
-        return redirect('/user')->with('success', 'User Created');
+        return redirect('/User')->with('success', 'User Created');
 
     }
 
