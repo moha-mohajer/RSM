@@ -14,4 +14,4 @@
 # $ composer require unisharp/laravel-ckeditor
 # $ php artisan vendor:publish --tag=ckeditor
 # S php artisan serve
-
+# $ php artisan storage:link
