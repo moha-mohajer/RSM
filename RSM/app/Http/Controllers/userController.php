@@ -187,7 +187,7 @@ class userController extends Controller
             $user->language = $language;
         }
         if($request->hasFile('photo')){
-            $userphoto = $fileNameToStore;
+            $user->photo = $fileNameToStore;
           }
         $user->name = $request->input('name');
         $user->surname = $request->input('surname');
