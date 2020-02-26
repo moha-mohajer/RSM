@@ -8,7 +8,7 @@
         <div class="card-header">{{ __('Register a User') }}</div>
 
         <div class="card-body">
-          {{ Form::open(['action' => 'userController@store', 'method' =>'POST']) }}
+          {{ Form::open(['action' => 'userController@store', 'method' =>'POST', 'enctype' => 'multipart/form-data']) }}
           @csrf
 
           <div class="form-group row">
@@ -53,10 +53,10 @@
             </div>
 
             <div class="form-group row">
-              {{form::label('sur_name','Surname',['class'=>'col-md-4 col-form-label text-md-right'])}}
+              {{form::label('surname','Surname',['class'=>'col-md-4 col-form-label text-md-right'])}}
 
               <div class="col-md-6">
-                {{form::text('sur_name','',['class'=>'form-control','placeholder'=>'Family name'])}}
+                {{form::text('surname','',['class'=>'form-control','placeholder'=>'Family name'])}}
               </div>
             </div>
 
@@ -69,10 +69,10 @@
             </div>
 
             <div class="form-group row">
-              {{form::label('user_name','Username',['class'=>'col-md-4 col-form-label text-md-right'])}}
+              {{form::label('username','Username',['class'=>'col-md-4 col-form-label text-md-right'])}}
 
               <div class="col-md-6">
-                {{form::text('user_name','',['class'=>'form-control','placeholder'=>'User name '])}}
+                {{form::text('username','',['class'=>'form-control','placeholder'=>'User name '])}}
               </div>
             </div>
 
@@ -100,7 +100,7 @@
                   'Greek' => 'Greek' ,
                   'Farsi' => 'Farsi' ,
                   'French' => 'French'
-                  ),null, array('multiple' => true))}}
+                  ),null, array_merge(['class' => 'form-control'], array('multiple' => true)))}}
               </div>
             </div>
 

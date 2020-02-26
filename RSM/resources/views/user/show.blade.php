@@ -1,42 +1,74 @@
 @extends('layouts.app')
 
 @section('content')
-  <br><p><a href="/ticket" class="btn btn-defult">Go Back</a></p>
-  <h1>create on {{$ticket->created_at}}</h1>
-  <div>
-      {{-- Customer: {!!$ticket->customer_id!!} --}}
-      <a href="/user/{{$ticket->customer_id}}">Cusomer ID: {!!$ticket->customer_id!!}</a>
-  <div>
-      {{-- Customer Confrmation On: {!!$ticket->customer_confirmation!!} --}}
-      <a href="/device/{{$ticket->device_id}}">Device ID: {!!$ticket->device_id!!}</a>
-  </div>
-  <div>
-     Isuse Description ID: {!!$ticket->customer_id!!}
-    <div>
-      Security Type: {!!$ticket->security_type!!}
-    </div>
-    <div>
-      Security code: {!!$ticket->security_code!!}
-    </div>
-    <div>
-      Belonging: {!!$ticket->Belonging!!}
-    </div>
-    <div>
-        Service Tag: {!!$ticket->ticket_tag!!}
-      </div>
-  <div>
-      User ID: {!!$ticket->user_id!!}
-  </div>
-  <div>
-    Note: {!!$ticket->note!!}
-  </div>
-  <hr>
-  <small>Updated at {{$ticket->updated_at}}</small>
-  <hr>
-  <a href="/ticket/{{$ticket->id}}/edit" class="btn btn-defult">Edit</a>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-30">
+      <div class="card">
+        
+        <div class="card-header">
+          <div class="form-group row">
+            <div class="col">
+              <h5>{{$user->name}}{{ __('  ') }}{{$user->surname}}</h1>
+            </div>
 
-  {!!Form::open(['action'=>['ticketController@destroy', $ticket->id],'method'=>'POST', 'class' =>"pull-right"])!!}
-    {{Form::hidden('_method', 'DELETE')}}
-    {{Form::submit('Delete', ['class'=>'btn btn-danger'])}}
-  {!!Form::close()!!}
+            <div class="col-auto">
+              <a href="/User" class="btn btn-secondary float-right">Go Back</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-body">
+          <div class="form-group row">
+            <div class="col">
+              <div class="form-group row">
+                <div class="col">
+                  Contact Number:  
+                </div>
+                <div class="col-auto">
+                  {{$user->phone_number}}             
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col">
+                Language:              
+                </div>
+                <div class="col-auto">
+                   {{$user->language}}
+                </div>
+              </div>
+
+              <div>
+                <small>Create By {{$user->user_id}} at {{$user->created_at}}</small>
+              </div>
+            </div>
+
+            <div class= "col-md-4 col-sm-4 ">
+              <div style="text-align: right">
+                <img style="width:100% " src = "/storage/photo/{{$user->photo}}"></p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div> 
+
+      <div class="form-group row">
+        <div class="col">
+          <a href="/User/{{$user->id}}/edit" class="btn btn-secondary">Edit</a>
+        </div>
+
+        <div class="col-auto">
+          {!!Form::open(['action'=>['userController@destroy', $user->id],'method'=>'POST', 'class' =>"pull-right"])!!}
+          {{Form::hidden('_method', 'DELETE')}}
+          {{Form::submit('Delete', ['class'=>'btn btn-danger float-right'])}}
+          {!!Form::close()!!}
+        </div>
+      </div>
+          
+    </div>
+  </div>
+</div>
 @endsection

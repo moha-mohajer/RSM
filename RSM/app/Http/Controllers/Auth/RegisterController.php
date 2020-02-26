@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+// image usage libraly
+use Illuminate\Support\Facades\Storage;
 
 class RegisterController extends Controller
 {
@@ -56,7 +58,8 @@ class RegisterController extends Controller
       'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
       'password' => ['required', 'string', 'min:8', 'confirmed'],
       'language' => ['required'],
-      'user_id' => ['required', 'integer']
+      'user_id' => ['required', 'integer'],
+      'photo' =>'image|nullable|max:1999'
     ]);
   }
 
@@ -78,7 +81,7 @@ class RegisterController extends Controller
       'name' => $data['name'],
       'surname' => $data['surname'],
       'email' => $data['email'],
-      'user_name' => $data['user_name'],
+      'username' => $data['username'],
       'password' => Hash::make($data['password']),
       'phone_number' => $data['phone_number'],
       'language' => $language,
