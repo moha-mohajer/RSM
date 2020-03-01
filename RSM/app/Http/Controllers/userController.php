@@ -217,12 +217,12 @@ class userController extends Controller
         $user = User::find($id);
 
         // // Check for correct user
-        // if(auth()->user()->id !== $post->user->id){
+        // if(auth()->user()->id !== $user->user->id){
         //     return redirect('/posts')->with('error', 'Unauthorized Page');
         // }
         // Remove user photo
-        if($post->photo !== 'noimage.jpg'){
-            Storage::delete('public/photo/'.$post->photo);
+        if($user->photo !== 'noimage.jpg'){
+            Storage::delete('public/photo/'.$user->photo);
         }
 
         $user->delete();

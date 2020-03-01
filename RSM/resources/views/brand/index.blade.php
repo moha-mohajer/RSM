@@ -4,32 +4,30 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-md-30">
-      @if (count($users) > 0)
+      @if (count($brands) > 0)
       <div class="card">
-        <div class="card-header">{{ __('Users') }}</div>
-
-        @foreach ($users as $user)
-        <a href="/User/{{$user->id}}">
+        <div class="card-header">{{ __('Brands') }}</div>
+        
+        @foreach ($brands as $brand)
+        <a href="/brand/{{$brand->id}}">
           <div class="card">
             <div class="form-group row">
-
               <div class= "col-md-2 col-sm-2">
-                <img style="width:100%" src = "/storage/photo/{{$user->photo}}">
+                <img style="width:100%" src = "/storage/brand_logo/{{$brand->brand_logo}}">
               </div>
 
               <div class="col-md-8 col-sm-8">
-                <h3>{{$user->name}}{{ __('  ') }}{{$user->surname}}</h3>
-                <small>create on {{$user->created_at}}</small>
-                <small>{{$user->phone_number}}</small>
+                <h3>{{$brand->brand}}</h3>
+                <small>create on {{$brand->created_at}}</small>
               </div>
             </div>
           </div>
         </a>
         @endforeach
-        {{$users->links()}}
+        {{$brands->links()}}
       </div>
       @else
-      <p>No user found</p>
+      <p>No brand found</p>
       @endif
     </div>
   </div>

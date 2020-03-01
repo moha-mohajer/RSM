@@ -4,7 +4,7 @@
 <br>
   <h1>Add a New Item</h1>
   {{ Form::open(['action' => 'itemController@store', 'method' =>'POST']) }}<br>
-  
+
     <div class="form-group">
       {{form::label('order_id','Order ')}}
       @if (count($selectOrder) > 0)
@@ -12,7 +12,7 @@
       @else
         <h3><p class="text-danger">No Order found. You must add a Order first.</p></h3>
       @endif
-      <p><a href="/order/create" target="_blank" class="btn btn-defult">Add a new order</a></p> 
+      <p><a href="/order/create" target="_blank" class="btn btn-defult">Add a new order</a></p>
     </div>
 
     <div class="form-group">
@@ -27,13 +27,13 @@
       @else
         <h3><p class="text-danger">No Order found. You must add a Suplier first.</p></h3>
       @endif
-      <p><a href="/user/create" target="_blank" class="btn btn-defult">Add a new Suplier</a></p> 
+      <p><a href="/user/create" target="_blank" class="btn btn-defult">Add a new Suplier</a></p>
       {{form::text('supplier_id','',['class'=>'form-control','placeholder'=>'Suplier Id'])}} --}}
     </div>
-  
+
     <div class="form-group">
       {{form::label('internet_link','Internet link')}}
-      {{Form::text('internet_link','',[['class'=>'form-control','placeholder'=>'Internet link'])}}
+      {{Form::text('internet_link','',['class'=>'form-control','placeholder'=>'Internet link'])}}
     </div>
 
     <div class="form-group">

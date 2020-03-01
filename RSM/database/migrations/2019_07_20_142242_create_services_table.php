@@ -15,7 +15,7 @@ class CreateServicesTable extends Migration
     {
         Schema::create('services', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('user_id')->nullable();
+            $table->integer('customer_id')->nullable();
             $table->integer('ticket_id')->nullable();
             $table->string('first_recognition')->nullable();
             $table->string('final_solution')->nullable();
@@ -25,6 +25,7 @@ class CreateServicesTable extends Migration
             $table->dateTime('finish_at')->nullable();
             $table->integer('fee')->nullable();
             $table->string('note')->nullable();
+            $table->biginteger('user_id')->nullable();
             $table->timestamps();
         });
     }

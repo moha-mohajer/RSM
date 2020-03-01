@@ -103,7 +103,7 @@ class ticketController extends Controller
         // Update Ticket
         $Ticket = Ticket::find($id);
         $Ticket->customer_id = $request->input('customer_id');
-        $Ticket->device_id = $request->input('device_id');
+        $Ticket->customer_id = $request->input('device_id');
         $Ticket->description = $request->input('description');
         $Ticket->security_type = $request->input('security_type');
         $Ticket->security_code = $request->input('security_code');
