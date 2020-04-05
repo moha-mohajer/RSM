@@ -4,12 +4,16 @@
   <h1>Devices</h1>
   @if (count($devices) > 0)
     @foreach ($devices as $device)
-        <div class="well">
-            <p>
-              <h3><a href="/device/{{$device->id}}">{{$device->type}}</a></h3>
+      <div class="well">
+        <a href="/device/{{$device->id}}">
+          <div class="form-group row">
+            <div class="col-md-8 col-sm-8">
+              <h3>{{$device->type}}</h3>
               <small>create on {{$device->created_at}}</small>
-            </p><br>
-        </div>
+            </div>
+          </div>
+        </a>
+      </div>
     @endforeach
      {{$devices->links()}}
   @else

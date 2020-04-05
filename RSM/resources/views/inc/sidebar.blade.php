@@ -16,7 +16,7 @@
           <div class="card-body">
             <ul class = " nav navbar-nav ">
               <li><a class="nav-link" href="/User/create">User</a></li>
-              <li><a class="nav-link" href="/brand/create">Brand</a></li>
+              <li>
               <li><a class="nav-link" href="/ticket/create">Ticket</a></li>
               <li><a class="nav-link" href="/item/create">Item</a></li>
               <li><a class="nav-link" href="/order/create">Order</a></li>

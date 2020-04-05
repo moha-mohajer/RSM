@@ -125,6 +125,7 @@ class brandController extends Controller
      */
     public function update(Request $request, $id)
     {
+      $brand = brand::find($id);
 
         // Validation of input data
         $this->validate($request,[
@@ -133,6 +134,10 @@ class brandController extends Controller
 
         //Handel file upload
         if($request->hasFile('brand_logo')){
+          //remove the old picture
+          if($brand->brand_logo !== 'noimage.jpg'){
+              Storage::delete('public/brand_logo/'.$brand->brand_logo);
+          }
 
             // Get filename with the extension
             $fileNameToExt = $request->file('brand_logo')->getClientOriginalName();
@@ -149,18 +154,14 @@ class brandController extends Controller
             //Upload imagen
             $path = $request->file('brand_logo')->storeAs('public/brand_logo', $fileNameToStore);
 
+            $brand->brand_logo = $fileNameToStore;
         }
 
         // Update brand
-        $brand = brand::find($id);
-
-        if($request->hasFile('brand_logo')){
-            $brand->brand_logo = $fileNameToStore;
-          }
         $brand->brand = $request->input('brand');
         $brand->note = $request->input('note');
         $brand->user_id = $request->input('user_id');
-        
+
         $brand->save();
 
         // redirect with success message

@@ -139,6 +139,7 @@ class userController extends Controller
      */
     public function update(Request $request, $id)
     {
+      $user = User::find($id);
 
         // Validation of input data
         $this->validate($request,[
@@ -149,6 +150,10 @@ class userController extends Controller
 
         //Handel file upload
         if($request->hasFile('photo')){
+
+          if($user->photo !== 'noimage.jpg'){
+            Storage::delete('public/photo/'.$user->photo);
+        }
 
             // Get filename with the extension
             $fileNameToExt = $request->file('photo')->getClientOriginalName();
@@ -164,11 +169,7 @@ class userController extends Controller
 
             //Upload imagen
             $path = $request->file('photo')->storeAs('public/photo', $fileNameToStore);
-
         }
-
-        // Update User
-        $user = User::find($id);
         $status=$request->input('status');
         if(isset($status)){
             $user->status = "DeActive";
@@ -198,7 +199,7 @@ class userController extends Controller
         $user->address = $request->input('address');
         $user->note = $request->input('note');
         $user->user_id = $request->input('user_id');
-        
+
         $user->save();
 
         // redirect with success message
