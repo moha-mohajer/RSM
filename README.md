@@ -14,8 +14,7 @@
   DB_PASSWORD=
 # Restart the server
 # $ php artisan migrate
-# $ composer require "laravelcollective/html":"^5.6.0"
-# $ composer require unisharp/laravel-ckeditor
+# $ composer update
 # $ php artisan vendor:publish --tag=ckeditor
 # S php artisan serve
 # $ php artisan storage:link
